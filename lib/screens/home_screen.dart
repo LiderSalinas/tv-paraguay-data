@@ -52,20 +52,29 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void moveSelection(int direction) {
-    if (isFullScreen) return;
+    final int totalChannels = paraguayChannels.length;
+    int nextIndex = selectedIndex + direction;
 
-    final int nextIndex = selectedIndex + direction;
+    if (nextIndex < 0) {
+      nextIndex = totalChannels - 1;
+    }
 
-    if (nextIndex < 0 || nextIndex >= paraguayChannels.length) return;
+    if (nextIndex >= totalChannels) {
+      nextIndex = 0;
+    }
 
     setState(() {
       selectedIndex = nextIndex;
     });
+
+    _focusNode.requestFocus();
   }
 
-  void toggleFullScreen() {
+  void enterFullScreen() {
+    if (isFullScreen) return;
+
     setState(() {
-      isFullScreen = !isFullScreen;
+      isFullScreen = true;
     });
 
     _focusNode.requestFocus();
@@ -76,6 +85,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
     setState(() {
       isFullScreen = false;
+    });
+
+    _focusNode.requestFocus();
+  }
+
+  void toggleFullScreen() {
+    setState(() {
+      isFullScreen = !isFullScreen;
     });
 
     _focusNode.requestFocus();
@@ -97,7 +114,11 @@ class _HomeScreenState extends State<HomeScreen> {
     if (event.logicalKey == LogicalKeyboardKey.enter ||
         event.logicalKey == LogicalKeyboardKey.select ||
         event.logicalKey == LogicalKeyboardKey.space) {
-      toggleFullScreen();
+      if (isFullScreen) {
+        exitFullScreen();
+      } else {
+        enterFullScreen();
+      }
       return;
     }
 
@@ -135,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: VideoPanel(
                         channel: selectedChannel,
                         isFullScreen: false,
-                        onToggleFullScreen: toggleFullScreen,
+                        onToggleFullScreen: enterFullScreen,
                       ),
                     ),
                   ],
