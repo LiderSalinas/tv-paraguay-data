@@ -1,124 +1,64 @@
-[
-  {
-    "id": 1,
-    "name": "PARAGUAY TV",
-    "shortName": "PYTV",
-    "category": "Nacional",
-    "streamUrl": "https://stream.paraguaytv.gov.py/memfs/bbe36fed-9b49-4d1d-adaa-4bd6d1b2e386.m3u8",
-    "httpHeaders": {
-      "Referer": "https://www.paraguaytv.gov.py/"
-    },
-    "isActive": true
-  },
-  {
-    "id": 2,
-    "name": "TELEFUTURO",
-    "shortName": "TF",
-    "category": "Nacional",
-    "streamUrl": "https://copacogen.desdeparaguay.net/telefuturo/telefuturo_py_alta/playlist.m3u8?admin=tvaccion",
-    "httpHeaders": {
-      "Referer": "https://www.telefuturo.com.py/"
-    },
-    "isActive": true
-  },
-  {
-    "id": 3,
-    "name": "SNT",
-    "shortName": "SNT",
-    "category": "Nacional",
-    "streamUrl": "https://alba-py-snt-snt.stream.mediatiquestream.com/index.m3u8",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 4,
-    "name": "NPY",
-    "shortName": "NPY",
-    "category": "Noticias",
-    "streamUrl": "https://copacogen.desdeparaguay.net/npy/npy_py_alta/playlist.m3u8?admin=tvaccion",
-    "httpHeaders": {
-      "Referer": "https://www.npy.com.py/"
-    },
-    "isActive": true
-  },
-  {
-    "id": 5,
-    "name": "C9N",
-    "shortName": "C9N",
-    "category": "Noticias",
-    "streamUrl": "https://alba-py-c9n-c9n.stream.mediatiquestream.com/index.m3u8",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 6,
-    "name": "COSMOS TV",
-    "shortName": "COSMOS",
-    "category": "Regional",
-    "streamUrl": "https://video.hostingcaaguazu.com:19360/cosmostv/cosmostv.m3u8",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 7,
-    "name": "MEGA TV",
-    "shortName": "MEGA",
-    "category": "Nacional",
-    "streamUrl": "https://www.desde-paraguay.com/mega.m3u8",
-    "httpHeaders": {
-      "Referer": "https://megacadena.com.py/"
-    },
-    "isActive": true
-  },
-  {
-    "id": 8,
-    "name": "CANAL PRO",
-    "shortName": "PRO",
-    "category": "Nacional",
-    "streamUrl": "https://www.desde-paraguay.com/pro.m3u8",
-    "httpHeaders": {
-      "Referer": "https://megacadena.com.py/"
-    },
-    "isActive": true
-  },
-  {
-    "id": 9,
-    "name": "ÑANDUTI TV",
-    "shortName": "ÑTV",
-    "category": "Noticias",
-    "streamUrl": "https://copacogen.desdeparaguay.net/nandutitv/nandutitv_baja/index.m3u8",
-    "httpHeaders": {
-      "Referer": "https://nanduti.com.py/nanduti-tv"
-    },
-    "isActive": true
-  },
-  {
-    "id": 10,
-    "name": "REPUBLICA TV",
-    "shortName": "REP",
-    "category": "Noticias",
-    "streamUrl": "https://rds3.desdeparaguay.net/republicatv/republicatv/playlist.m3u8",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 11,
-    "name": "MONUMENTAL TV",
-    "shortName": "MON",
-    "category": "Noticias",
-    "streamUrl": "https://copacogen.desdeparaguay.net/monumentaltv/monumentaltv_med/playlist.m3u8?admin=tvaccion",
-    "httpHeaders": {
-      "Referer": "https://www.monumental.com.py/"
-    },
-    "isActive": true
-  },
-  {
-    "id": 12,
-    "name": "BRUNO MASI TV",
-    "shortName": "BM",
-    "category": "Regional",
-    "streamUrl": "https://rds3.desdeparaguay.net/brunomasitv/brunomasitv/playlist.m3u8",
-    "httpHeaders": {},
-    "isActive": true
-  }
-]
+,
+{
+  "id": 13,
+  "name": "CANAL 8 PRUEBA",
+  "shortName": "C8",
+  "category": "Regional",
+  "streamUrl": "https://rds3.desdeparaguay.net/canal8/canal8/playlist.m3u8",
+  "httpHeaders": {},
+  "isActive": true
+},
+{
+  "id": 14,
+  "name": "ALT MEDIA TV PRUEBA",
+  "shortName": "ALT",
+  "category": "Regional",
+  "streamUrl": "https://rds3.desdeparaguay.net/altmedia/altmedia/playlist.m3u8",
+  "httpHeaders": {},
+  "isActive": true
+},
+{
+  "id": 15,
+  "name": "PANAMBI VERA TV PRUEBA",
+  "shortName": "PAN",
+  "category": "Regional",
+  "streamUrl": "https://rds3.desdeparaguay.net/panambivera/panambivera/playlist.m3u8",
+  "httpHeaders": {},
+  "isActive": true
+},
+{
+  "id": 16,
+  "name": "TV AIRE PARAGUAY PRUEBA",
+  "shortName": "AIRE",
+  "category": "Regional",
+  "streamUrl": "https://rds3.desdeparaguay.net/tvaire/tvaire/playlist.m3u8",
+  "httpHeaders": {},
+  "isActive": true
+},
+{
+  "id": 17,
+  "name": "ALMAYA TV PRUEBA",
+  "shortName": "ALM",
+  "category": "Regional",
+  "streamUrl": "https://rds3.desdeparaguay.net/almayatv/almayatv/playlist.m3u8",
+  "httpHeaders": {},
+  "isActive": true
+},
+{
+  "id": 18,
+  "name": "DEL REY TV PRUEBA",
+  "shortName": "REY",
+  "category": "Regional",
+  "streamUrl": "https://rds3.desdeparaguay.net/delreytv/delreytv/playlist.m3u8",
+  "httpHeaders": {},
+  "isActive": true
+},
+{
+  "id": 19,
+  "name": "XPRESS TV PARAGUARI PRUEBA",
+  "shortName": "XPRESS",
+  "category": "Regional",
+  "streamUrl": "https://rds3.desdeparaguay.net/xpresstv/xpresstv/playlist.m3u8",
+  "httpHeaders": {},
+  "isActive": true
+}
