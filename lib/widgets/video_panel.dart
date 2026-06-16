@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -6,10 +7,12 @@ import '../models/channel.dart';
 
 class VideoPanel extends StatefulWidget {
   final Channel? channel;
+  final bool isFullScreen;
 
   const VideoPanel({
     super.key,
     required this.channel,
+    this.isFullScreen = false,
   });
 
   @override
@@ -35,7 +38,8 @@ class _VideoPanelState extends State<VideoPanel> {
   void didUpdateWidget(covariant VideoPanel oldWidget) {
     super.didUpdateWidget(oldWidget);
 
-    if (oldWidget.channel?.id != widget.channel?.id) {
+    if (oldWidget.channel?.id != widget.channel?.id ||
+        oldWidget.isFullScreen != widget.isFullScreen) {
       _setupPlayer();
     }
   }
@@ -93,8 +97,9 @@ class _VideoPanelState extends State<VideoPanel> {
       setState(() {
         _isLoading = false;
         _hasError = false;
+        _errorMessage = '';
       });
-    } catch (error) {
+    } catch (_) {
       if (!mounted) return;
 
       setState(() {
@@ -106,6 +111,19 @@ class _VideoPanelState extends State<VideoPanel> {
   }
 
   void _setupWebView(Channel channel) {
+    if (kIsWeb) {
+      if (!mounted) return;
+
+      setState(() {
+        _isLoading = false;
+        _hasError = true;
+        _errorMessage =
+            'Este canal usa WebView. Probalo en la APK Android del TV Box, no en Chrome.';
+      });
+
+      return;
+    }
+
     try {
       if (channel.webUrl.trim().isEmpty) {
         throw Exception('Este canal no tiene webUrl');
@@ -118,12 +136,14 @@ class _VideoPanelState extends State<VideoPanel> {
           NavigationDelegate(
             onProgress: (progress) {
               if (!mounted) return;
+
               setState(() {
                 _webProgress = progress;
               });
             },
             onPageStarted: (_) {
               if (!mounted) return;
+
               setState(() {
                 _isLoading = true;
                 _hasError = false;
@@ -134,17 +154,23 @@ class _VideoPanelState extends State<VideoPanel> {
               await _tryImproveWebPlayer();
 
               if (!mounted) return;
+
               setState(() {
                 _isLoading = false;
+                _hasError = false;
+                _errorMessage = '';
               });
             },
-            onWebResourceError: (_) {
+            onWebResourceError: (error) {
               if (!mounted) return;
-              setState(() {
-                _isLoading = false;
-                _hasError = true;
-                _errorMessage = 'No se pudo abrir el reproductor web.';
-              });
+
+              if (error.isForMainFrame == true) {
+                setState(() {
+                  _isLoading = false;
+                  _hasError = true;
+                  _errorMessage = 'No se pudo abrir el reproductor web.';
+                });
+              }
             },
           ),
         )
@@ -184,14 +210,21 @@ class _VideoPanelState extends State<VideoPanel> {
         document.documentElement.style.backgroundColor = 'black';
 
         const videos = document.querySelectorAll('video');
+
         videos.forEach(function(video) {
           video.setAttribute('playsinline', 'true');
           video.setAttribute('webkit-playsinline', 'true');
+          video.autoplay = true;
           video.muted = false;
+
+          try {
+            video.play();
+          } catch (e) {}
         });
       ''');
     } catch (_) {
-      // No hacemos nada si la web bloquea el JavaScript.
+      // Algunas páginas bloquean JavaScript externo.
+      // No rompemos la app por eso.
     }
   }
 
@@ -225,8 +258,11 @@ class _VideoPanelState extends State<VideoPanel> {
           Positioned.fill(
             child: _buildContent(channel),
           ),
+
           if (_isLoading) _buildLoadingOverlay(channel),
+
           if (_hasError) _buildErrorOverlay(channel),
+
           if (!_isLoading && !_hasError && channel != null)
             _buildChannelHeader(channel),
         ],
@@ -263,6 +299,19 @@ class _VideoPanelState extends State<VideoPanel> {
       return const SizedBox.shrink();
     }
 
+    if (widget.isFullScreen) {
+      return Center(
+        child: FittedBox(
+          fit: BoxFit.contain,
+          child: SizedBox(
+            width: controller.value.size.width,
+            height: controller.value.size.height,
+            child: VideoPlayer(controller),
+          ),
+        ),
+      );
+    }
+
     return Center(
       child: AspectRatio(
         aspectRatio: controller.value.aspectRatio,
@@ -279,7 +328,7 @@ class _VideoPanelState extends State<VideoPanel> {
 
   Widget _buildVideoControls(VideoPlayerController controller) {
     return Container(
-      color: Colors.black.withOpacity(0.35),
+      color: Colors.black.withValues(alpha: 0.35),
       child: Row(
         children: [
           IconButton(
@@ -323,7 +372,7 @@ class _VideoPanelState extends State<VideoPanel> {
 
   Widget _buildLoadingOverlay(Channel? channel) {
     return Container(
-      color: Colors.black.withOpacity(0.70),
+      color: Colors.black.withValues(alpha: 0.70),
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -355,7 +404,7 @@ class _VideoPanelState extends State<VideoPanel> {
 
   Widget _buildErrorOverlay(Channel? channel) {
     return Container(
-      color: Colors.black.withOpacity(0.85),
+      color: Colors.black.withValues(alpha: 0.85),
       padding: const EdgeInsets.all(24),
       child: Center(
         child: Column(
@@ -406,10 +455,11 @@ class _VideoPanelState extends State<VideoPanel> {
           vertical: 8,
         ),
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.55),
+          color: Colors.black.withValues(alpha: 0.55),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
             const Icon(
               Icons.live_tv,

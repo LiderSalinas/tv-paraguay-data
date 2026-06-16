@@ -5,6 +5,7 @@ import '../models/channel.dart';
 class ChannelList extends StatelessWidget {
   final List<Channel> channels;
   final Channel? selectedChannel;
+  final ScrollController? scrollController;
   final ValueChanged<Channel> onChannelSelected;
 
   const ChannelList({
@@ -12,6 +13,7 @@ class ChannelList extends StatelessWidget {
     required this.channels,
     required this.selectedChannel,
     required this.onChannelSelected,
+    this.scrollController,
   });
 
   @override
@@ -31,6 +33,7 @@ class ChannelList extends StatelessWidget {
     return Container(
       color: const Color(0xFF111111),
       child: ListView.builder(
+        controller: scrollController,
         padding: const EdgeInsets.symmetric(vertical: 8),
         itemCount: channels.length,
         itemBuilder: (context, index) {
@@ -47,6 +50,8 @@ class ChannelList extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               child: InkWell(
                 borderRadius: BorderRadius.circular(12),
+                focusColor: Colors.redAccent.withValues(alpha: 0.75),
+                hoverColor: Colors.redAccent.withValues(alpha: 0.35),
                 onTap: () => onChannelSelected(channel),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -82,10 +87,10 @@ class ChannelList extends StatelessWidget {
       height: 46,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: Colors.black.withOpacity(0.30),
+        color: Colors.black.withValues(alpha: 0.30),
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
-          color: Colors.white.withOpacity(0.15),
+          color: Colors.white.withValues(alpha: 0.15),
         ),
       ),
       child: Text(
@@ -136,8 +141,8 @@ class ChannelList extends StatelessWidget {
               ),
               decoration: BoxDecoration(
                 color: channel.isWebView
-                    ? Colors.blueGrey.withOpacity(0.85)
-                    : Colors.black.withOpacity(0.30),
+                    ? Colors.blueGrey.withValues(alpha: 0.85)
+                    : Colors.black.withValues(alpha: 0.30),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(

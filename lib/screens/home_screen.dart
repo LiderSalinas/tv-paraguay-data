@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../models/channel.dart';
 import '../services/channel_service.dart';
@@ -14,17 +15,38 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final ChannelService _channelService = ChannelService();
+  final FocusNode _tvFocusNode = FocusNode(debugLabel: 'tv_box_focus');
+  final ScrollController _scrollController = ScrollController();
 
   List<Channel> _channels = [];
   Channel? _selectedChannel;
 
   bool _isLoading = true;
+  bool _isFullScreen = false;
   String _errorMessage = '';
+
+  int get _selectedIndex {
+    if (_selectedChannel == null) return -1;
+    return _channels.indexWhere((channel) => channel.id == _selectedChannel!.id);
+  }
 
   @override
   void initState() {
     super.initState();
     _loadChannels();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        _tvFocusNode.requestFocus();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _tvFocusNode.dispose();
+    _scrollController.dispose();
+    super.dispose();
   }
 
   Future<void> _loadChannels() async {
@@ -41,38 +63,191 @@ class _HomeScreenState extends State<HomeScreen> {
         _selectedChannel = channels.isNotEmpty ? channels.first : null;
         _isLoading = false;
       });
+
+      _requestTvFocus();
     } catch (_) {
       setState(() {
         _isLoading = false;
         _errorMessage = 'No se pudo cargar la lista de canales.';
       });
+
+      _requestTvFocus();
     }
+  }
+
+  void _requestTvFocus() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted && !_tvFocusNode.hasFocus) {
+        _tvFocusNode.requestFocus();
+      }
+    });
   }
 
   void _selectChannel(Channel channel) {
     setState(() {
       _selectedChannel = channel;
     });
+
+    _requestTvFocus();
+  }
+
+  void _selectChannelByIndex(int index) {
+    if (_channels.isEmpty) return;
+
+    final safeIndex = index.clamp(0, _channels.length - 1);
+    final channel = _channels[safeIndex];
+
+    setState(() {
+      _selectedChannel = channel;
+    });
+
+    _scrollToSelected(safeIndex);
+  }
+
+  void _nextChannel() {
+    if (_channels.isEmpty) return;
+
+    final currentIndex = _selectedIndex;
+    final nextIndex = currentIndex < 0
+        ? 0
+        : (currentIndex + 1) % _channels.length;
+
+    _selectChannelByIndex(nextIndex);
+  }
+
+  void _previousChannel() {
+    if (_channels.isEmpty) return;
+
+    final currentIndex = _selectedIndex;
+    final previousIndex = currentIndex <= 0
+        ? _channels.length - 1
+        : currentIndex - 1;
+
+    _selectChannelByIndex(previousIndex);
+  }
+
+  void _scrollToSelected(int index) {
+    if (!_scrollController.hasClients) return;
+
+    const itemHeight = 78.0;
+    final targetOffset = (index * itemHeight) - 120;
+
+    _scrollController.animateTo(
+      targetOffset.clamp(
+        _scrollController.position.minScrollExtent,
+        _scrollController.position.maxScrollExtent,
+      ),
+      duration: const Duration(milliseconds: 220),
+      curve: Curves.easeOut,
+    );
+  }
+
+  void _toggleFullScreen() {
+    setState(() {
+      _isFullScreen = !_isFullScreen;
+    });
+
+    _requestTvFocus();
+  }
+
+  void _enterFullScreen() {
+    if (_isFullScreen) return;
+
+    setState(() {
+      _isFullScreen = true;
+    });
+
+    _requestTvFocus();
+  }
+
+  void _exitFullScreen() {
+    if (!_isFullScreen) return;
+
+    setState(() {
+      _isFullScreen = false;
+    });
+
+    _requestTvFocus();
+  }
+
+  KeyEventResult _handleTvRemoteKey(FocusNode node, KeyEvent event) {
+    if (event is! KeyDownEvent) {
+      return KeyEventResult.ignored;
+    }
+
+    final key = event.logicalKey;
+
+    if (key == LogicalKeyboardKey.arrowDown ||
+        key == LogicalKeyboardKey.channelDown ||
+        key == LogicalKeyboardKey.mediaTrackNext) {
+      _nextChannel();
+      return KeyEventResult.handled;
+    }
+
+    if (key == LogicalKeyboardKey.arrowUp ||
+        key == LogicalKeyboardKey.channelUp ||
+        key == LogicalKeyboardKey.mediaTrackPrevious) {
+      _previousChannel();
+      return KeyEventResult.handled;
+    }
+
+    if (key == LogicalKeyboardKey.enter ||
+        key == LogicalKeyboardKey.select ||
+        key == LogicalKeyboardKey.numpadEnter ||
+        key == LogicalKeyboardKey.space) {
+      _toggleFullScreen();
+      return KeyEventResult.handled;
+    }
+
+    if (key == LogicalKeyboardKey.arrowRight) {
+      _enterFullScreen();
+      return KeyEventResult.handled;
+    }
+
+    if (key == LogicalKeyboardKey.arrowLeft) {
+      _exitFullScreen();
+      return KeyEventResult.handled;
+    }
+
+    if (key == LogicalKeyboardKey.escape ||
+        key == LogicalKeyboardKey.goBack ||
+        key == LogicalKeyboardKey.browserBack) {
+      _exitFullScreen();
+      return KeyEventResult.handled;
+    }
+
+    return KeyEventResult.ignored;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: const Text('TV Paraguay'),
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
-        elevation: 0,
-        actions: [
-          IconButton(
-            tooltip: 'Actualizar canales',
-            onPressed: _loadChannels,
-            icon: const Icon(Icons.refresh),
-          ),
-        ],
+    return Focus(
+      focusNode: _tvFocusNode,
+      autofocus: true,
+      onKeyEvent: _handleTvRemoteKey,
+      child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: _requestTvFocus,
+        child: Scaffold(
+          backgroundColor: Colors.black,
+          appBar: _isFullScreen
+              ? null
+              : AppBar(
+                  title: const Text('TV Paraguay'),
+                  backgroundColor: Colors.black,
+                  foregroundColor: Colors.white,
+                  elevation: 0,
+                  actions: [
+                    IconButton(
+                      tooltip: 'Actualizar canales',
+                      onPressed: _loadChannels,
+                      icon: const Icon(Icons.refresh),
+                    ),
+                  ],
+                ),
+          body: _buildBody(),
+        ),
       ),
-      body: _buildBody(),
     );
   }
 
@@ -87,6 +262,20 @@ class _HomeScreenState extends State<HomeScreen> {
       return _buildError();
     }
 
+    if (_isFullScreen) {
+      return Stack(
+        children: [
+          Positioned.fill(
+            child: VideoPanel(
+              channel: _selectedChannel,
+              isFullScreen: true,
+            ),
+          ),
+          _buildTvBoxHint(),
+        ],
+      );
+    }
+
     return LayoutBuilder(
       builder: (context, constraints) {
         final isWide = constraints.maxWidth >= 800;
@@ -99,12 +288,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: ChannelList(
                   channels: _channels,
                   selectedChannel: _selectedChannel,
+                  scrollController: _scrollController,
                   onChannelSelected: _selectChannel,
                 ),
               ),
               Expanded(
                 child: VideoPanel(
                   channel: _selectedChannel,
+                  isFullScreen: false,
                 ),
               ),
             ],
@@ -117,6 +308,7 @@ class _HomeScreenState extends State<HomeScreen> {
               flex: 5,
               child: VideoPanel(
                 channel: _selectedChannel,
+                isFullScreen: false,
               ),
             ),
             Expanded(
@@ -124,12 +316,38 @@ class _HomeScreenState extends State<HomeScreen> {
               child: ChannelList(
                 channels: _channels,
                 selectedChannel: _selectedChannel,
+                scrollController: _scrollController,
                 onChannelSelected: _selectChannel,
               ),
             ),
           ],
         );
       },
+    );
+  }
+
+  Widget _buildTvBoxHint() {
+    return Positioned(
+      left: 16,
+      bottom: 16,
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 14,
+          vertical: 10,
+        ),
+        decoration: BoxDecoration(
+          color: Colors.black.withValues(alpha: 0.55),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: const Text(
+          '↑ ↓ Cambiar canal  ·  OK salir/entrar pantalla completa  ·  ← volver',
+          style: TextStyle(
+            color: Colors.white70,
+            fontSize: 13,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
     );
   }
 
