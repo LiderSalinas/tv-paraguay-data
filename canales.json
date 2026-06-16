@@ -61,9 +61,9 @@
   },
   {
     "id": 7,
-    "name": "MEGA TV PRUEBA",
+    "name": "MEGA TV",
     "shortName": "MEGA",
-    "category": "Prueba",
+    "category": "Nacional",
     "streamUrl": "https://www.desde-paraguay.com/mega.m3u8",
     "httpHeaders": {
       "Referer": "https://megacadena.com.py/"
@@ -72,9 +72,9 @@
   },
   {
     "id": 8,
-    "name": "CANAL PRO PRUEBA",
+    "name": "CANAL PRO",
     "shortName": "PRO",
-    "category": "Prueba",
+    "category": "Nacional",
     "streamUrl": "https://www.desde-paraguay.com/pro.m3u8",
     "httpHeaders": {
       "Referer": "https://megacadena.com.py/"
@@ -83,9 +83,9 @@
   },
   {
     "id": 9,
-    "name": "ÑANDUTI TV PRUEBA",
+    "name": "ÑANDUTI TV",
     "shortName": "ÑTV",
-    "category": "Prueba",
+    "category": "Noticias",
     "streamUrl": "https://copacogen.desdeparaguay.net/nandutitv/nandutitv_baja/index.m3u8",
     "httpHeaders": {
       "Referer": "https://nanduti.com.py/nanduti-tv"
@@ -94,39 +94,48 @@
   },
   {
     "id": 10,
-    "name": "ÑANDUTI TV PRUEBA 2",
-    "shortName": "ÑTV2",
-    "category": "Prueba",
-    "streamUrl": "https://tvdatta.com:3839/live/nandutitvlive.m3u8",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 11,
-    "name": "RED DIGITAL PRUEBA",
-    "shortName": "RED",
-    "category": "Prueba",
-    "streamUrl": "https://rds3.desdeparaguay.net/reddigital/reddigital/playlist.m3u8",
-    "httpHeaders": {
-      "Referer": "https://www.reddigitalsanpedro.com.py/"
-    },
-    "isActive": true
-  },
-  {
-    "id": 12,
-    "name": "REPUBLICA TV PRUEBA",
+    "name": "REPUBLICA TV",
     "shortName": "REP",
-    "category": "Prueba",
+    "category": "Noticias",
     "streamUrl": "https://rds3.desdeparaguay.net/republicatv/republicatv/playlist.m3u8",
     "httpHeaders": {},
     "isActive": true
   },
   {
-    "id": 13,
-    "name": "ÑEMBY NOTICIAS PRUEBA",
-    "shortName": "ÑN",
+    "id": 11,
+    "name": "MONUMENTAL TV PRUEBA",
+    "shortName": "MON",
     "category": "Prueba",
-    "streamUrl": "https://rpn3.bozztv.com/ssh101/ssh101/streaminghd/playlist.m3u8",
+    "streamUrl": "https://copacogen.desdeparaguay.net/monumentaltv/monumentaltv_med/playlist.m3u8?admin=tvaccion",
+    "httpHeaders": {
+      "Referer": "https://www.monumental.com.py/"
+    },
+    "isActive": true
+  },
+  {
+    "id": 12,
+    "name": "OBEDIRA TV PRUEBA",
+    "shortName": "OBE",
+    "category": "Prueba",
+    "streamUrl": "https://59ce1298bfb98.streamlock.net/obediratv/obediratv/playlist.m3u8",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 13,
+    "name": "SUCESO TV PRUEBA",
+    "shortName": "SUC",
+    "category": "Prueba",
+    "streamUrl": "https://59ce1298bfb98.streamlock.net/sucesotv/sucesotv/playlist.m3u8",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 14,
+    "name": "RCC PRUEBA 2",
+    "shortName": "RCC2",
+    "category": "Prueba",
+    "streamUrl": "https://59ce1298bfb98.streamlock.net/rcctv02/rcctv02/playlist.m3u8",
     "httpHeaders": {},
     "isActive": true
   }
