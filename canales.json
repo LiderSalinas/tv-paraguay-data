@@ -120,5 +120,71 @@
     "streamUrl": "https://rds3.desdeparaguay.net/brunomasitv/brunomasitv/playlist.m3u8",
     "httpHeaders": {},
     "isActive": true
+  },
+  {
+    "id": 13,
+    "name": "GEN PRUEBA 3",
+    "shortName": "GEN3",
+    "category": "Prueba",
+    "streamUrl": "https://copacogen.desdeparaguay.net/gentv/gentv_py_baja/playlist.m3u8",
+    "httpHeaders": {
+      "Referer": "https://www.gen.com.py/"
+    },
+    "isActive": true
+  },
+  {
+    "id": 14,
+    "name": "GEN PRUEBA 4",
+    "shortName": "GEN4",
+    "category": "Prueba",
+    "streamUrl": "https://copacogen.desdeparaguay.net/gentv/gentv_py_baja/index.m3u8",
+    "httpHeaders": {
+      "Referer": "https://www.gen.com.py/"
+    },
+    "isActive": true
+  },
+  {
+    "id": 15,
+    "name": "UNICANAL PRUEBA 3",
+    "shortName": "UNI3",
+    "category": "Prueba",
+    "streamUrl": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/72.m3u8",
+    "httpHeaders": {
+      "Referer": "https://unicanal.com.py/"
+    },
+    "isActive": true
+  },
+  {
+    "id": 16,
+    "name": "TRECE PRUEBA 3",
+    "shortName": "13-3",
+    "category": "Prueba",
+    "streamUrl": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/82.m3u8",
+    "httpHeaders": {
+      "Referer": "https://trece.com.py/"
+    },
+    "isActive": true
+  },
+  {
+    "id": 17,
+    "name": "E40 TV PRUEBA 2",
+    "shortName": "E40-2",
+    "category": "Prueba",
+    "streamUrl": "https://59ce1298bfb98.streamlock.net/e40/e40/playlist.m3u8",
+    "httpHeaders": {
+      "Referer": "https://www.estacion40.com.py/"
+    },
+    "isActive": true
+  },
+  {
+    "id": 18,
+    "name": "E40 TV PRUEBA 3",
+    "shortName": "E40-3",
+    "category": "Prueba",
+    "streamUrl": "https://rds3.desdeparaguay.net/e40tv/e40tv/playlist.m3u8",
+    "httpHeaders": {
+      "Referer": "https://www.estacion40.com.py/"
+    },
+    "isActive": true
   }
 ]
