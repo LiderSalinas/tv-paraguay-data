@@ -114,9 +114,9 @@
   },
   {
     "id": 12,
-    "name": "BRUNO MASI TV PRUEBA 2",
-    "shortName": "BM2",
-    "category": "Prueba",
+    "name": "BRUNO MASI TV",
+    "shortName": "BM",
+    "category": "Regional",
     "streamUrl": "https://rds3.desdeparaguay.net/brunomasitv/brunomasitv/playlist.m3u8",
     "httpHeaders": {},
     "isActive": true
