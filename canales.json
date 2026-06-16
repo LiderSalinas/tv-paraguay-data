@@ -39,22 +39,75 @@
   },
   {
     "id": 4,
-    "name": "ABC TV PRUEBA",
-    "shortName": "ABC",
+    "name": "TELEFUTURO",
+    "shortName": "TF",
+    "category": "Nacional",
+    "streamUrl": "https://copacogen.desdeparaguay.net/telefuturo/telefuturo_py_alta/media.m3u8?admin=tvaccion",
+    "httpHeaders": {
+      "Referer": "https://www.telefuturo.com.py"
+    },
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "name": "SNT",
+    "shortName": "SNT",
+    "category": "Nacional",
+    "streamUrl": "https://alba-py-snt-snt.stream.mediatiquestream.com/index.m3u8",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 6,
+    "name": "SNT PRUEBA 2",
+    "shortName": "SNT2",
+    "category": "Prueba",
+    "streamUrl": "https://d2qsan2ut81n2k.cloudfront.net/live/2e1f1b6a-9d03-4194-8559-2eabe61a1555/ts:abr.m3u8",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 7,
+    "name": "NPY",
+    "shortName": "NPY",
     "category": "Noticias",
-    "streamUrl": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/7.m3u8",
+    "streamUrl": "https://copacogen.desdeparaguay.net/npy/npy_py_alta/playlist.m3u8?admin=tvaccion",
+    "httpHeaders": {
+      "Referer": "https://www.npy.com.py/"
+    },
+    "isActive": true
+  },
+  {
+    "id": 8,
+    "name": "GEN PRUEBA",
+    "shortName": "GEN",
+    "category": "Noticias",
+    "streamUrl": "https://copacogen.desdeparaguay.net/gentv/gentv_py_baja/playlist.m3u8?k=49b1057aed3a0c22b3375a8edf1adc19a4a22fc7692f2cc38693b9a4e4b64ccd&exp=1686944340",
+    "httpHeaders": {
+      "Referer": "https://www.gen.com.py/"
+    },
+    "isActive": true
+  },
+  {
+    "id": 9,
+    "name": "ABC TV PRUEBA 1",
+    "shortName": "ABC1",
+    "category": "Prueba",
+    "streamUrl": "https://abc-color.cdn.vustreams.com/live/d87c2b7b-9ecf-4e6e-b63b-b32772bd7851/live.isml/d87c2b7b-9ecf-4e6e-b63b-b32772bd7851.m3u8",
     "httpHeaders": {
       "Referer": "https://www.abc.com.py/"
     },
     "isActive": true
   },
   {
-    "id": 5,
-    "name": "RQP SOLO AUDIO",
-    "shortName": "RQP",
-    "category": "Radio",
-    "streamUrl": "https://alba-py-rqp-rqp.stream.mediatiquestream.com/index.m3u8",
-    "httpHeaders": {},
-    "isActive": false
+    "id": 10,
+    "name": "ABC TV PRUEBA 2",
+    "shortName": "ABC2",
+    "category": "Prueba",
+    "streamUrl": "https://cdn.jwplayer.com/live/broadcast/GQagSggs.mpd",
+    "httpHeaders": {
+      "Referer": "https://www.abc.com.py/"
+    },
+    "isActive": true
   }
 ]
