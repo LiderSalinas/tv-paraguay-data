@@ -1,0 +1,191 @@
+[
+  {
+    "id": 0,
+    "name": "PRUEBA HLS ONLINE",
+    "shortName": "TEST",
+    "category": "Prueba",
+    "streamUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 1,
+    "name": "TELEFUTURO",
+    "shortName": "TF",
+    "category": "Nacional",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "name": "SNT",
+    "shortName": "SNT",
+    "category": "Nacional",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "name": "TRECE",
+    "shortName": "13",
+    "category": "Nacional",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 4,
+    "name": "PARAVISIÓN",
+    "shortName": "PV",
+    "category": "Nacional",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "name": "UNICANAL",
+    "shortName": "UNI",
+    "category": "Nacional",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 6,
+    "name": "LA TELE",
+    "shortName": "LT",
+    "category": "Nacional",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 7,
+    "name": "PARAGUAY TV",
+    "shortName": "PYTV",
+    "category": "Nacional",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 8,
+    "name": "TV2",
+    "shortName": "TV2",
+    "category": "Nacional",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 9,
+    "name": "NPY",
+    "shortName": "NPY",
+    "category": "Noticias",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 10,
+    "name": "C9N",
+    "shortName": "C9N",
+    "category": "Noticias",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 11,
+    "name": "GEN",
+    "shortName": "GEN",
+    "category": "Noticias",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 12,
+    "name": "ABC TV",
+    "shortName": "ABC",
+    "category": "Noticias",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 13,
+    "name": "E40 TV",
+    "shortName": "E40",
+    "category": "Entretenimiento",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 14,
+    "name": "PALMA TV",
+    "shortName": "PALMA",
+    "category": "Entretenimiento",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 15,
+    "name": "RQP TV",
+    "shortName": "RQP",
+    "category": "Entretenimiento",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 16,
+    "name": "RCC",
+    "shortName": "RCC",
+    "category": "Regional",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 17,
+    "name": "A24 PARAGUAY",
+    "shortName": "A24",
+    "category": "Regional",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 18,
+    "name": "AMÉRICA PARAGUAY",
+    "shortName": "AM",
+    "category": "Regional",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 19,
+    "name": "SUR TV",
+    "shortName": "SUR",
+    "category": "Regional",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 20,
+    "name": "SOMOS DEL ESTE",
+    "shortName": "SOMOS",
+    "category": "Regional",
+    "streamUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+    "httpHeaders": {},
+    "isActive": true
+  }
+]

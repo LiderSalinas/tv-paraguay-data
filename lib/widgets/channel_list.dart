@@ -20,7 +20,7 @@ class ChannelList extends StatefulWidget {
 class _ChannelListState extends State<ChannelList> {
   final ScrollController _scrollController = ScrollController();
 
-  static const double itemHeight = 50;
+  static const double itemHeight = 56;
 
   @override
   void didUpdateWidget(covariant ChannelList oldWidget) {
@@ -62,10 +62,34 @@ class _ChannelListState extends State<ChannelList> {
     super.dispose();
   }
 
+  Widget _buildLogo(Channel channel) {
+    if (channel.logoUrl.trim().isEmpty) {
+      return _LogoFallback(text: channel.shortName);
+    }
+
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(6),
+      child: Image.network(
+        channel.logoUrl,
+        width: 78,
+        height: 40,
+        fit: BoxFit.contain,
+        errorBuilder: (context, error, stackTrace) {
+          return _LogoFallback(text: channel.shortName);
+        },
+        loadingBuilder: (context, child, loadingProgress) {
+          if (loadingProgress == null) return child;
+
+          return _LogoFallback(text: channel.shortName);
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 390,
+      width: 410,
       padding: const EdgeInsets.fromLTRB(18, 16, 12, 16),
       color: const Color(0xFF050505),
       child: Column(
@@ -91,17 +115,17 @@ class _ChannelListState extends State<ChannelList> {
                     channel.id == widget.selectedChannel.id;
 
                 return Padding(
-                  padding: const EdgeInsets.only(bottom: 5),
+                  padding: const EdgeInsets.only(bottom: 6),
                   child: InkWell(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(10),
                     onTap: () => widget.onChannelSelected(channel),
                     child: Container(
-                      height: 45,
+                      height: 50,
                       decoration: BoxDecoration(
                         color: isSelected
                             ? const Color(0xFF0D6EFD)
                             : const Color(0xFF1B1B1B),
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                           color: isSelected
                               ? const Color(0xFF70A7FF)
@@ -112,36 +136,29 @@ class _ChannelListState extends State<ChannelList> {
                       child: Row(
                         children: [
                           SizedBox(
-                            width: 45,
+                            width: 42,
                             child: Center(
                               child: Text(
-                                '${channel.id}',
+                                '${index + 1}',
                                 style: const TextStyle(
                                   color: Colors.white,
-                                  fontSize: 18,
+                                  fontSize: 17,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ),
                           ),
                           Container(
-                            width: 78,
-                            height: 36,
-                            margin: const EdgeInsets.symmetric(horizontal: 8),
+                            width: 86,
+                            height: 42,
+                            margin: const EdgeInsets.only(right: 10),
+                            padding: const EdgeInsets.all(4),
                             decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(6),
+                              borderRadius: BorderRadius.circular(7),
                             ),
                             child: Center(
-                              child: Text(
-                                channel.shortName,
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
+                              child: _buildLogo(channel),
                             ),
                           ),
                           Expanded(
@@ -152,10 +169,11 @@ class _ChannelListState extends State<ChannelList> {
                                 color: Colors.white,
                                 fontSize: 19,
                                 fontWeight: FontWeight.w600,
-                                letterSpacing: 1.2,
+                                letterSpacing: 0.8,
                               ),
                             ),
                           ),
+                          const SizedBox(width: 8),
                         ],
                       ),
                     ),
@@ -165,6 +183,30 @@ class _ChannelListState extends State<ChannelList> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _LogoFallback extends StatelessWidget {
+  final String text;
+
+  const _LogoFallback({
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        text,
+        textAlign: TextAlign.center,
+        overflow: TextOverflow.ellipsis,
+        style: const TextStyle(
+          color: Colors.black,
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }

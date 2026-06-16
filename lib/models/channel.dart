@@ -4,6 +4,7 @@ class Channel {
   final String shortName;
   final String category;
   final String streamUrl;
+  final String logoUrl;
   final Map<String, String> httpHeaders;
   final bool isActive;
 
@@ -13,6 +14,7 @@ class Channel {
     required this.shortName,
     required this.category,
     required this.streamUrl,
+    this.logoUrl = '',
     this.httpHeaders = const {},
     this.isActive = true,
   });
@@ -37,6 +39,7 @@ class Channel {
       shortName: json['shortName']?.toString() ?? '',
       category: json['category']?.toString() ?? 'General',
       streamUrl: json['streamUrl']?.toString() ?? '',
+      logoUrl: json['logoUrl']?.toString() ?? '',
       httpHeaders: parsedHeaders,
       isActive: json['isActive'] == true,
     );

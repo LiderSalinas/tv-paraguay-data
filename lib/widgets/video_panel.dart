@@ -7,13 +7,15 @@ import '../models/channel.dart';
 class VideoPanel extends StatefulWidget {
   final Channel channel;
   final bool isFullScreen;
-  final VoidCallback onToggleFullScreen;
+  final bool showInfoOverlay;
+  final VoidCallback onTap;
 
   const VideoPanel({
     super.key,
     required this.channel,
     required this.isFullScreen,
-    required this.onToggleFullScreen,
+    required this.showInfoOverlay,
+    required this.onTap,
   });
 
   @override
@@ -85,8 +87,6 @@ class _VideoPanelState extends State<VideoPanel> {
       await controller.initialize();
       await controller.setLooping(true);
 
-      // En Chrome/Web conviene mutear para evitar bloqueo de autoplay.
-      // En Android/TV Box dejamos volumen normal.
       if (kIsWeb) {
         await controller.setVolume(0);
       } else {
@@ -138,82 +138,67 @@ class _VideoPanelState extends State<VideoPanel> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: widget.onToggleFullScreen,
+      onTap: widget.onTap,
       onDoubleTap: _togglePlayPause,
       child: Container(
         color: Colors.black,
-        padding: EdgeInsets.all(widget.isFullScreen ? 0 : 22),
-        child: Column(
-          children: [
-            Expanded(
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF101820),
-                  borderRadius: BorderRadius.circular(
-                    widget.isFullScreen ? 0 : 10,
+        padding: EdgeInsets.all(widget.isFullScreen ? 0 : 18),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(widget.isFullScreen ? 0 : 10),
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            color: Colors.black,
+            child: Stack(
+              children: [
+                Positioned.fill(
+                  child: _buildVideoContent(),
+                ),
+
+                if (!widget.isFullScreen)
+                  Positioned(
+                    bottom: 18,
+                    right: 18,
+                    child: _SmallHint(
+                      text: 'OK / Toque para pantalla completa',
+                    ),
                   ),
-                  border: widget.isFullScreen
-                      ? null
-                      : Border.all(
-                          color: const Color(0xFF252525),
-                          width: 2,
+
+                if (widget.showInfoOverlay)
+                  Positioned(
+                    left: 24,
+                    top: 24,
+                    child: _ChannelInfoOverlay(
+                      channel: widget.channel,
+                      isFullScreen: widget.isFullScreen,
+                    ),
+                  ),
+
+                if (_controller != null &&
+                    _controller!.value.isInitialized &&
+                    !_controller!.value.isPlaying)
+                  Center(
+                    child: InkWell(
+                      onTap: _togglePlayPause,
+                      borderRadius: BorderRadius.circular(60),
+                      child: Container(
+                        width: 100,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color: Colors.black.withValues(alpha: 0.65),
+                          shape: BoxShape.circle,
                         ),
-                ),
-                child: Stack(
-                  children: [
-                    Positioned.fill(
-                      child: _buildVideoContent(),
-                    ),
-
-                    const Positioned(
-                      top: 20,
-                      right: 20,
-                      child: _LiveBadge(),
-                    ),
-
-                    Positioned(
-                      bottom: 18,
-                      right: 20,
-                      child: _HintBadge(
-                        text: widget.isFullScreen
-                            ? 'ESC / Atrás para volver'
-                            : 'ENTER o toque para pantalla completa',
-                      ),
-                    ),
-
-                    if (_controller != null &&
-                        _controller!.value.isInitialized &&
-                        !_controller!.value.isPlaying)
-                      Center(
-                        child: InkWell(
-                          onTap: _togglePlayPause,
-                          borderRadius: BorderRadius.circular(50),
-                          child: Container(
-                            width: 90,
-                            height: 90,
-                            decoration: BoxDecoration(
-                              color: Colors.black.withValues(alpha: 0.65),
-                              shape: BoxShape.circle,
-                            ),
-                            child: const Icon(
-                              Icons.play_arrow,
-                              color: Colors.white,
-                              size: 60,
-                            ),
-                          ),
+                        child: const Icon(
+                          Icons.play_arrow,
+                          color: Colors.white,
+                          size: 70,
                         ),
                       ),
-                  ],
-                ),
-              ),
+                    ),
+                  ),
+              ],
             ),
-
-            if (!widget.isFullScreen) ...[
-              const SizedBox(height: 16),
-              _BottomInfoBar(channelName: widget.channel.name),
-            ],
-          ],
+          ),
         ),
       ),
     );
@@ -241,92 +226,78 @@ class _VideoPanelState extends State<VideoPanel> {
   }
 }
 
-class _VideoErrorPlaceholder extends StatelessWidget {
+class _ChannelInfoOverlay extends StatelessWidget {
   final Channel channel;
+  final bool isFullScreen;
 
-  const _VideoErrorPlaceholder({
+  const _ChannelInfoOverlay({
     required this.channel,
+    required this.isFullScreen,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+    return Container(
+      constraints: BoxConstraints(
+        minWidth: isFullScreen ? 320 : 260,
+      ),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 18,
+        vertical: 14,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.black.withValues(alpha: 0.72),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.12),
+        ),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            width: 150,
-            height: 100,
+            width: isFullScreen ? 72 : 58,
+            height: isFullScreen ? 48 : 42,
             decoration: BoxDecoration(
               color: const Color(0xFF0D6EFD),
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(8),
             ),
             child: Center(
               child: Text(
                 channel.shortName,
-                style: const TextStyle(
+                textAlign: TextAlign.center,
+                style: TextStyle(
                   color: Colors.white,
-                  fontSize: 34,
+                  fontSize: isFullScreen ? 21 : 17,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
           ),
-          const SizedBox(height: 24),
-          Text(
-            channel.name,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 42,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 2,
-            ),
-          ),
-          const SizedBox(height: 12),
-          const Text(
-            'NO SE PUDO CARGAR EL VIDEO',
-            style: TextStyle(
-              color: Colors.white70,
-              fontSize: 20,
-              letterSpacing: 2,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _LiveBadge extends StatelessWidget {
-  const _LiveBadge();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 14,
-        vertical: 8,
-      ),
-      decoration: BoxDecoration(
-        color: const Color(0xFF111111),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: const Row(
-        children: [
-          Icon(
-            Icons.circle,
-            color: Colors.red,
-            size: 14,
-          ),
-          SizedBox(width: 8),
-          Text(
-            'EN VIVO',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
+          const SizedBox(width: 14),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                channel.name,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: isFullScreen ? 28 : 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                isFullScreen
+                    ? '⬆️ ⬇️ cambiar canal  •  Atrás para volver'
+                    : 'Presioná OK para pantalla completa',
+                style: TextStyle(
+                  color: Colors.white70,
+                  fontSize: isFullScreen ? 15 : 13,
+                ),
+              ),
+            ],
           ),
         ],
       ),
@@ -334,10 +305,10 @@ class _LiveBadge extends StatelessWidget {
   }
 }
 
-class _HintBadge extends StatelessWidget {
+class _SmallHint extends StatelessWidget {
   final String text;
 
-  const _HintBadge({
+  const _SmallHint({
     required this.text,
   });
 
@@ -349,77 +320,75 @@ class _HintBadge extends StatelessWidget {
         vertical: 8,
       ),
       decoration: BoxDecoration(
-        color: Colors.black.withValues(alpha: 0.65),
+        color: Colors.black.withValues(alpha: 0.60),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Text(
         text,
         style: const TextStyle(
           color: Colors.white70,
-          fontSize: 16,
+          fontSize: 15,
         ),
       ),
     );
   }
 }
 
-class _BottomInfoBar extends StatelessWidget {
-  final String channelName;
+class _VideoErrorPlaceholder extends StatelessWidget {
+  final Channel channel;
 
-  const _BottomInfoBar({
-    required this.channelName,
+  const _VideoErrorPlaceholder({
+    required this.channel,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 58,
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 18),
-      decoration: BoxDecoration(
-        color: const Color(0xFF07152A),
-        borderRadius: BorderRadius.circular(6),
-      ),
-      child: Row(
-        children: [
-          const Text(
-            '12:45',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(width: 24),
-          const Text(
-            '26.5°',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 22,
-            ),
-          ),
-          const SizedBox(width: 24),
-          Container(
-            width: 8,
-            height: 8,
-            decoration: const BoxDecoration(
-              color: Colors.orange,
-              shape: BoxShape.circle,
-            ),
-          ),
-          const SizedBox(width: 14),
-          Expanded(
-            child: Text(
-              'Reproduciendo $channelName - TV Paraguay',
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                letterSpacing: 1,
+      color: const Color(0xFF101820),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 150,
+              height: 100,
+              decoration: BoxDecoration(
+                color: const Color(0xFF0D6EFD),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Center(
+                child: Text(
+                  channel.shortName,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 34,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
-          ),
-        ],
+            const SizedBox(height: 24),
+            Text(
+              channel.name,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 38,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.5,
+              ),
+            ),
+            const SizedBox(height: 12),
+            const Text(
+              'CANAL NO DISPONIBLE',
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 20,
+                letterSpacing: 2,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

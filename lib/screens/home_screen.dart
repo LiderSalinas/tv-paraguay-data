@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -19,8 +21,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Channel> channels = [];
   int selectedIndex = 0;
+
   bool isFullScreen = false;
   bool isLoading = true;
+  bool showFullScreenInfo = false;
+
+  Timer? _infoTimer;
 
   Channel get selectedChannel => channels[selectedIndex];
 
@@ -37,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
+    _infoTimer?.cancel();
     _focusNode.dispose();
     super.dispose();
   }
@@ -55,6 +62,42 @@ class _HomeScreenState extends State<HomeScreen> {
     _focusNode.requestFocus();
   }
 
+  void _showInfoTemporarily() {
+    _infoTimer?.cancel();
+
+    setState(() {
+      showFullScreenInfo = true;
+    });
+
+    _infoTimer = Timer(const Duration(seconds: 3), () {
+      if (!mounted) return;
+
+      setState(() {
+        showFullScreenInfo = false;
+      });
+    });
+  }
+
+  void _toggleInfoOverlay() {
+    _infoTimer?.cancel();
+
+    setState(() {
+      showFullScreenInfo = !showFullScreenInfo;
+    });
+
+    if (showFullScreenInfo) {
+      _infoTimer = Timer(const Duration(seconds: 4), () {
+        if (!mounted) return;
+
+        setState(() {
+          showFullScreenInfo = false;
+        });
+      });
+    }
+
+    _focusNode.requestFocus();
+  }
+
   void selectChannel(Channel channel) {
     final int index = channels.indexWhere(
       (item) => item.id == channel.id,
@@ -65,6 +108,10 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       selectedIndex = index;
     });
+
+    if (isFullScreen) {
+      _showInfoTemporarily();
+    }
 
     _focusNode.requestFocus();
   }
@@ -87,6 +134,10 @@ class _HomeScreenState extends State<HomeScreen> {
       selectedIndex = nextIndex;
     });
 
+    if (isFullScreen) {
+      _showInfoTemporarily();
+    }
+
     _focusNode.requestFocus();
   }
 
@@ -97,22 +148,18 @@ class _HomeScreenState extends State<HomeScreen> {
       isFullScreen = true;
     });
 
+    _showInfoTemporarily();
     _focusNode.requestFocus();
   }
 
   void exitFullScreen() {
     if (!isFullScreen) return;
 
+    _infoTimer?.cancel();
+
     setState(() {
       isFullScreen = false;
-    });
-
-    _focusNode.requestFocus();
-  }
-
-  void toggleFullScreen() {
-    setState(() {
-      isFullScreen = !isFullScreen;
+      showFullScreenInfo = false;
     });
 
     _focusNode.requestFocus();
@@ -135,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
         event.logicalKey == LogicalKeyboardKey.select ||
         event.logicalKey == LogicalKeyboardKey.space) {
       if (isFullScreen) {
-        exitFullScreen();
+        _toggleInfoOverlay();
       } else {
         enterFullScreen();
       }
@@ -188,7 +235,8 @@ class _HomeScreenState extends State<HomeScreen> {
       return VideoPanel(
         channel: selectedChannel,
         isFullScreen: true,
-        onToggleFullScreen: toggleFullScreen,
+        showInfoOverlay: showFullScreenInfo,
+        onTap: _toggleInfoOverlay,
       );
     }
 
@@ -203,7 +251,8 @@ class _HomeScreenState extends State<HomeScreen> {
           child: VideoPanel(
             channel: selectedChannel,
             isFullScreen: false,
-            onToggleFullScreen: enterFullScreen,
+            showInfoOverlay: true,
+            onTap: enterFullScreen,
           ),
         ),
       ],

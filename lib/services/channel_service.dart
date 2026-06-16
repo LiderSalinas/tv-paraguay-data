@@ -6,13 +6,10 @@ import '../data/channels_data.dart';
 import '../models/channel.dart';
 
 class ChannelService {
-  static const String remoteChannelsUrl = '';
+  static const String remoteChannelsUrl =
+      'https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/refs/heads/main/canales.json';
 
   Future<List<Channel>> getChannels() async {
-    if (remoteChannelsUrl.trim().isEmpty) {
-      return paraguayChannelsFallback;
-    }
-
     try {
       final uri = Uri.parse(
         '$remoteChannelsUrl?ts=${DateTime.now().millisecondsSinceEpoch}',
