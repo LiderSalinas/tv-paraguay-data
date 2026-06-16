@@ -1,20 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'screens/home_screen.dart';
 
-Future<void> main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
-  await SystemChrome.setPreferredOrientations([
-    DeviceOrientation.landscapeLeft,
-    DeviceOrientation.landscapeRight,
-  ]);
-
-  await SystemChrome.setEnabledSystemUIMode(
-    SystemUiMode.immersiveSticky,
-  );
-
   runApp(const TvParaguayApp());
 }
 
@@ -28,8 +17,11 @@ class TvParaguayApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.redAccent,
+          brightness: Brightness.dark,
+        ),
         useMaterial3: true,
-        fontFamily: 'Arial',
       ),
       home: const HomeScreen(),
     );
