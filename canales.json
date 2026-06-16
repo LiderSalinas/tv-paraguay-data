@@ -103,9 +103,9 @@
   },
   {
     "id": 11,
-    "name": "MONUMENTAL TV PRUEBA",
+    "name": "MONUMENTAL TV",
     "shortName": "MON",
-    "category": "Prueba",
+    "category": "Noticias",
     "streamUrl": "https://copacogen.desdeparaguay.net/monumentaltv/monumentaltv_med/playlist.m3u8?admin=tvaccion",
     "httpHeaders": {
       "Referer": "https://www.monumental.com.py/"
@@ -114,28 +114,10 @@
   },
   {
     "id": 12,
-    "name": "OBEDIRA TV PRUEBA",
-    "shortName": "OBE",
-    "category": "Prueba",
-    "streamUrl": "https://59ce1298bfb98.streamlock.net/obediratv/obediratv/playlist.m3u8",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 13,
-    "name": "SUCESO TV PRUEBA",
-    "shortName": "SUC",
-    "category": "Prueba",
-    "streamUrl": "https://59ce1298bfb98.streamlock.net/sucesotv/sucesotv/playlist.m3u8",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 14,
-    "name": "RCC PRUEBA 2",
-    "shortName": "RCC2",
-    "category": "Prueba",
-    "streamUrl": "https://59ce1298bfb98.streamlock.net/rcctv02/rcctv02/playlist.m3u8",
+    "name": "BRUNO MASI TV",
+    "shortName": "BM",
+    "category": "Regional",
+    "streamUrl": "https://rds3.desdeparaguay.net/brunomasi/brunomasi/playlist.m3u8",
     "httpHeaders": {},
     "isActive": true
   }
