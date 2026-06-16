@@ -21,33 +21,40 @@
   },
   {
     "id": 2,
-    "name": "TRECE",
-    "shortName": "13",
-    "category": "Nacional",
-    "streamUrl": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/82.m3u8",
-    "httpHeaders": {
-      "Referer": "https://trece.com.py/"
-    },
+    "name": "C9N",
+    "shortName": "C9N",
+    "category": "Noticias",
+    "streamUrl": "https://alba-py-c9n-c9n.stream.mediatiquestream.com/index.m3u8",
+    "httpHeaders": {},
     "isActive": true
   },
   {
     "id": 3,
-    "name": "UNICANAL",
-    "shortName": "UNI",
-    "category": "Noticias",
-    "streamUrl": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/72.m3u8",
-    "httpHeaders": {
-      "Referer": "https://unicanal.com.py/"
-    },
+    "name": "COSMOS TV",
+    "shortName": "COSMOS",
+    "category": "Regional",
+    "streamUrl": "https://video.hostingcaaguazu.com:19360/cosmostv/cosmostv.m3u8",
+    "httpHeaders": {},
     "isActive": true
   },
   {
     "id": 4,
-    "name": "RQP TV",
+    "name": "ABC TV PRUEBA",
+    "shortName": "ABC",
+    "category": "Noticias",
+    "streamUrl": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/7.m3u8",
+    "httpHeaders": {
+      "Referer": "https://www.abc.com.py/"
+    },
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "name": "RQP SOLO AUDIO",
     "shortName": "RQP",
-    "category": "Entretenimiento",
+    "category": "Radio",
     "streamUrl": "https://alba-py-rqp-rqp.stream.mediatiquestream.com/index.m3u8",
     "httpHeaders": {},
-    "isActive": true
+    "isActive": false
   }
 ]
