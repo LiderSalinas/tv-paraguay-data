@@ -58,5 +58,76 @@
     "streamUrl": "https://video.hostingcaaguazu.com:19360/cosmostv/cosmostv.m3u8",
     "httpHeaders": {},
     "isActive": true
+  },
+  {
+    "id": 7,
+    "name": "MEGA TV PRUEBA",
+    "shortName": "MEGA",
+    "category": "Prueba",
+    "streamUrl": "https://www.desde-paraguay.com/mega.m3u8",
+    "httpHeaders": {
+      "Referer": "https://megacadena.com.py/"
+    },
+    "isActive": true
+  },
+  {
+    "id": 8,
+    "name": "CANAL PRO PRUEBA",
+    "shortName": "PRO",
+    "category": "Prueba",
+    "streamUrl": "https://www.desde-paraguay.com/pro.m3u8",
+    "httpHeaders": {
+      "Referer": "https://megacadena.com.py/"
+    },
+    "isActive": true
+  },
+  {
+    "id": 9,
+    "name": "ÑANDUTI TV PRUEBA",
+    "shortName": "ÑTV",
+    "category": "Prueba",
+    "streamUrl": "https://copacogen.desdeparaguay.net/nandutitv/nandutitv_baja/index.m3u8",
+    "httpHeaders": {
+      "Referer": "https://nanduti.com.py/nanduti-tv"
+    },
+    "isActive": true
+  },
+  {
+    "id": 10,
+    "name": "ÑANDUTI TV PRUEBA 2",
+    "shortName": "ÑTV2",
+    "category": "Prueba",
+    "streamUrl": "https://tvdatta.com:3839/live/nandutitvlive.m3u8",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 11,
+    "name": "RED DIGITAL PRUEBA",
+    "shortName": "RED",
+    "category": "Prueba",
+    "streamUrl": "https://rds3.desdeparaguay.net/reddigital/reddigital/playlist.m3u8",
+    "httpHeaders": {
+      "Referer": "https://www.reddigitalsanpedro.com.py/"
+    },
+    "isActive": true
+  },
+  {
+    "id": 12,
+    "name": "REPUBLICA TV PRUEBA",
+    "shortName": "REP",
+    "category": "Prueba",
+    "streamUrl": "https://rds3.desdeparaguay.net/republicatv/republicatv/playlist.m3u8",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 13,
+    "name": "ÑEMBY NOTICIAS PRUEBA",
+    "shortName": "ÑN",
+    "category": "Prueba",
+    "streamUrl": "https://rpn3.bozztv.com/ssh101/ssh101/streaminghd/playlist.m3u8",
+    "httpHeaders": {},
+    "isActive": true
   }
 ]
