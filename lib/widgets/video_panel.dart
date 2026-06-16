@@ -75,7 +75,11 @@ class _VideoPanelState extends State<VideoPanel> {
     }
 
     try {
-      final controller = VideoPlayerController.networkUrl(Uri.parse(url));
+      final controller = VideoPlayerController.networkUrl(
+        Uri.parse(url),
+        httpHeaders: widget.channel.httpHeaders,
+      );
+
       _controller = controller;
 
       await controller.initialize();
@@ -118,7 +122,7 @@ class _VideoPanelState extends State<VideoPanel> {
   }
 
   void _togglePlayPause() {
-    final controller = _controller;
+    final VideoPlayerController? controller = _controller;
 
     if (controller == null || !controller.value.isInitialized) return;
 
@@ -216,7 +220,7 @@ class _VideoPanelState extends State<VideoPanel> {
   }
 
   Widget _buildVideoContent() {
-    final controller = _controller;
+    final VideoPlayerController? controller = _controller;
 
     if (_isLoading) {
       return const Center(

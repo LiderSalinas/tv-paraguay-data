@@ -4,6 +4,7 @@ class Channel {
   final String shortName;
   final String category;
   final String streamUrl;
+  final Map<String, String> httpHeaders;
   final bool isActive;
 
   const Channel({
@@ -12,6 +13,32 @@ class Channel {
     required this.shortName,
     required this.category,
     required this.streamUrl,
+    this.httpHeaders = const {},
     this.isActive = true,
   });
+
+  factory Channel.fromJson(Map<String, dynamic> json) {
+    final rawHeaders = json['httpHeaders'];
+
+    Map<String, String> parsedHeaders = {};
+
+    if (rawHeaders is Map) {
+      parsedHeaders = rawHeaders.map(
+        (key, value) => MapEntry(
+          key.toString(),
+          value.toString(),
+        ),
+      );
+    }
+
+    return Channel(
+      id: int.tryParse(json['id'].toString()) ?? 0,
+      name: json['name']?.toString() ?? 'SIN NOMBRE',
+      shortName: json['shortName']?.toString() ?? '',
+      category: json['category']?.toString() ?? 'General',
+      streamUrl: json['streamUrl']?.toString() ?? '',
+      httpHeaders: parsedHeaders,
+      isActive: json['isActive'] == true,
+    );
+  }
 }
