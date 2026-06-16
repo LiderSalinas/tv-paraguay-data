@@ -27,7 +27,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int get _selectedIndex {
     if (_selectedChannel == null) return -1;
-    return _channels.indexWhere((channel) => channel.id == _selectedChannel!.id);
+
+    return _channels.indexWhere(
+      (channel) => channel.id == _selectedChannel!.id,
+    );
   }
 
   @override
@@ -46,6 +49,14 @@ class _HomeScreenState extends State<HomeScreen> {
   void dispose() {
     _tvFocusNode.dispose();
     _scrollController.dispose();
+
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+
     super.dispose();
   }
 
@@ -102,6 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
     });
 
     _scrollToSelected(safeIndex);
+    _requestTvFocus();
   }
 
   void _nextChannel() {
@@ -129,45 +141,58 @@ class _HomeScreenState extends State<HomeScreen> {
   void _scrollToSelected(int index) {
     if (!_scrollController.hasClients) return;
 
-    const itemHeight = 78.0;
+    const itemHeight = 86.0;
     final targetOffset = (index * itemHeight) - 120;
 
+    final min = _scrollController.position.minScrollExtent;
+    final max = _scrollController.position.maxScrollExtent;
+
     _scrollController.animateTo(
-      targetOffset.clamp(
-        _scrollController.position.minScrollExtent,
-        _scrollController.position.maxScrollExtent,
-      ),
+      targetOffset.clamp(min, max),
       duration: const Duration(milliseconds: 220),
       curve: Curves.easeOut,
     );
   }
 
-  void _toggleFullScreen() {
+  Future<void> _toggleFullScreen() async {
+    final nextValue = !_isFullScreen;
+
     setState(() {
-      _isFullScreen = !_isFullScreen;
+      _isFullScreen = nextValue;
     });
+
+    if (nextValue) {
+      await SystemChrome.setEnabledSystemUIMode(
+        SystemUiMode.immersiveSticky,
+      );
+
+      await SystemChrome.setPreferredOrientations([
+        DeviceOrientation.landscapeLeft,
+        DeviceOrientation.landscapeRight,
+      ]);
+    } else {
+      await SystemChrome.setEnabledSystemUIMode(
+        SystemUiMode.edgeToEdge,
+      );
+
+      await SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.landscapeLeft,
+        DeviceOrientation.landscapeRight,
+      ]);
+    }
 
     _requestTvFocus();
   }
 
-  void _enterFullScreen() {
+  Future<void> _enterFullScreen() async {
     if (_isFullScreen) return;
-
-    setState(() {
-      _isFullScreen = true;
-    });
-
-    _requestTvFocus();
+    await _toggleFullScreen();
   }
 
-  void _exitFullScreen() {
+  Future<void> _exitFullScreen() async {
     if (!_isFullScreen) return;
-
-    setState(() {
-      _isFullScreen = false;
-    });
-
-    _requestTvFocus();
+    await _toggleFullScreen();
   }
 
   KeyEventResult _handleTvRemoteKey(FocusNode node, KeyEvent event) {
@@ -212,8 +237,12 @@ class _HomeScreenState extends State<HomeScreen> {
     if (key == LogicalKeyboardKey.escape ||
         key == LogicalKeyboardKey.goBack ||
         key == LogicalKeyboardKey.browserBack) {
-      _exitFullScreen();
-      return KeyEventResult.handled;
+      if (_isFullScreen) {
+        _exitFullScreen();
+        return KeyEventResult.handled;
+      }
+
+      return KeyEventResult.ignored;
     }
 
     return KeyEventResult.ignored;
@@ -269,6 +298,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: VideoPanel(
               channel: _selectedChannel,
               isFullScreen: true,
+              onToggleFullScreen: _toggleFullScreen,
             ),
           ),
           _buildTvBoxHint(),
@@ -296,6 +326,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: VideoPanel(
                   channel: _selectedChannel,
                   isFullScreen: false,
+                  onToggleFullScreen: _toggleFullScreen,
                 ),
               ),
             ],
@@ -309,6 +340,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: VideoPanel(
                 channel: _selectedChannel,
                 isFullScreen: false,
+                onToggleFullScreen: _toggleFullScreen,
               ),
             ),
             Expanded(
@@ -340,7 +372,7 @@ class _HomeScreenState extends State<HomeScreen> {
           borderRadius: BorderRadius.circular(12),
         ),
         child: const Text(
-          '↑ ↓ Cambiar canal  ·  OK salir/entrar pantalla completa  ·  ← volver',
+          '↑ ↓ cambiar canal  ·  OK pantalla completa  ·  ← volver',
           style: TextStyle(
             color: Colors.white70,
             fontSize: 13,

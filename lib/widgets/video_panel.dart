@@ -1,18 +1,23 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_flutter_android/webview_flutter_android.dart';
 
 import '../models/channel.dart';
 
 class VideoPanel extends StatefulWidget {
   final Channel? channel;
   final bool isFullScreen;
+  final VoidCallback? onToggleFullScreen;
 
   const VideoPanel({
     super.key,
     required this.channel,
     this.isFullScreen = false,
+    this.onToggleFullScreen,
   });
 
   @override
@@ -22,6 +27,7 @@ class VideoPanel extends StatefulWidget {
 class _VideoPanelState extends State<VideoPanel> {
   VideoPlayerController? _videoController;
   WebViewController? _webViewController;
+  Timer? _autoPlayTimer;
 
   bool _isLoading = false;
   bool _hasError = false;
@@ -38,8 +44,7 @@ class _VideoPanelState extends State<VideoPanel> {
   void didUpdateWidget(covariant VideoPanel oldWidget) {
     super.didUpdateWidget(oldWidget);
 
-    if (oldWidget.channel?.id != widget.channel?.id ||
-        oldWidget.isFullScreen != widget.isFullScreen) {
+    if (oldWidget.channel?.id != widget.channel?.id) {
       _setupPlayer();
     }
   }
@@ -47,6 +52,7 @@ class _VideoPanelState extends State<VideoPanel> {
   Future<void> _setupPlayer() async {
     final channel = widget.channel;
 
+    _stopAutoplayAttempts();
     await _disposeVideoController();
 
     _webViewController = null;
@@ -68,7 +74,7 @@ class _VideoPanelState extends State<VideoPanel> {
     }
 
     if (channel.isWebView) {
-      _setupWebView(channel);
+      await _setupWebView(channel);
       return;
     }
 
@@ -110,7 +116,7 @@ class _VideoPanelState extends State<VideoPanel> {
     }
   }
 
-  void _setupWebView(Channel channel) {
+  Future<void> _setupWebView(Channel channel) async {
     if (kIsWeb) {
       if (!mounted) return;
 
@@ -129,55 +135,61 @@ class _VideoPanelState extends State<VideoPanel> {
         throw Exception('Este canal no tiene webUrl');
       }
 
-      final controller = WebViewController()
-        ..setJavaScriptMode(JavaScriptMode.unrestricted)
-        ..setBackgroundColor(Colors.black)
-        ..setNavigationDelegate(
-          NavigationDelegate(
-            onProgress: (progress) {
-              if (!mounted) return;
+      final controller = WebViewController();
 
-              setState(() {
-                _webProgress = progress;
-              });
-            },
-            onPageStarted: (_) {
-              if (!mounted) return;
+      if (controller.platform is AndroidWebViewController) {
+        AndroidWebViewController.enableDebugging(kDebugMode);
 
-              setState(() {
-                _isLoading = true;
-                _hasError = false;
-                _errorMessage = '';
-              });
-            },
-            onPageFinished: (_) async {
-              await _tryImproveWebPlayer();
+        await (controller.platform as AndroidWebViewController)
+            .setMediaPlaybackRequiresUserGesture(false);
+      }
 
-              if (!mounted) return;
+      await controller.setJavaScriptMode(JavaScriptMode.unrestricted);
+      await controller.setBackgroundColor(Colors.black);
 
+      await controller.setNavigationDelegate(
+        NavigationDelegate(
+          onProgress: (progress) {
+            if (!mounted) return;
+
+            setState(() {
+              _webProgress = progress;
+            });
+          },
+          onPageStarted: (_) {
+            if (!mounted) return;
+
+            setState(() {
+              _isLoading = true;
+              _hasError = false;
+              _errorMessage = '';
+            });
+          },
+          onPageFinished: (_) async {
+            await _tryImproveWebPlayer();
+            _startAutoplayAttempts();
+
+            if (!mounted) return;
+
+            setState(() {
+              _isLoading = false;
+              _hasError = false;
+              _errorMessage = '';
+            });
+          },
+          onWebResourceError: (error) {
+            if (!mounted) return;
+
+            if (error.isForMainFrame == true) {
               setState(() {
                 _isLoading = false;
-                _hasError = false;
-                _errorMessage = '';
+                _hasError = true;
+                _errorMessage = 'No se pudo abrir el reproductor web.';
               });
-            },
-            onWebResourceError: (error) {
-              if (!mounted) return;
-
-              if (error.isForMainFrame == true) {
-                setState(() {
-                  _isLoading = false;
-                  _hasError = true;
-                  _errorMessage = 'No se pudo abrir el reproductor web.';
-                });
-              }
-            },
-          ),
-        )
-        ..loadRequest(
-          Uri.parse(channel.webUrl),
-          headers: channel.httpHeaders,
-        );
+            }
+          },
+        ),
+      );
 
       _webViewController = controller;
 
@@ -188,6 +200,11 @@ class _VideoPanelState extends State<VideoPanel> {
         _hasError = false;
         _errorMessage = '';
       });
+
+      await controller.loadRequest(
+        Uri.parse(channel.webUrl),
+        headers: channel.httpHeaders,
+      );
     } catch (_) {
       if (!mounted) return;
 
@@ -199,6 +216,30 @@ class _VideoPanelState extends State<VideoPanel> {
     }
   }
 
+  void _startAutoplayAttempts() {
+    _stopAutoplayAttempts();
+
+    int attempts = 0;
+
+    _autoPlayTimer = Timer.periodic(
+      const Duration(seconds: 1),
+      (timer) async {
+        attempts++;
+
+        await _tryImproveWebPlayer();
+
+        if (attempts >= 10) {
+          timer.cancel();
+        }
+      },
+    );
+  }
+
+  void _stopAutoplayAttempts() {
+    _autoPlayTimer?.cancel();
+    _autoPlayTimer = null;
+  }
+
   Future<void> _tryImproveWebPlayer() async {
     final controller = _webViewController;
 
@@ -206,25 +247,99 @@ class _VideoPanelState extends State<VideoPanel> {
 
     try {
       await controller.runJavaScript('''
-        document.body.style.backgroundColor = 'black';
-        document.documentElement.style.backgroundColor = 'black';
+        (function() {
+          document.body.style.backgroundColor = 'black';
+          document.documentElement.style.backgroundColor = 'black';
 
-        const videos = document.querySelectorAll('video');
+          const videos = document.querySelectorAll('video');
 
-        videos.forEach(function(video) {
-          video.setAttribute('playsinline', 'true');
-          video.setAttribute('webkit-playsinline', 'true');
-          video.autoplay = true;
-          video.muted = false;
+          videos.forEach(function(video) {
+            video.setAttribute('playsinline', 'true');
+            video.setAttribute('webkit-playsinline', 'true');
+            video.setAttribute('autoplay', 'true');
 
-          try {
-            video.play();
-          } catch (e) {}
-        });
+            video.autoplay = true;
+            video.muted = false;
+            video.volume = 1.0;
+
+            const promise = video.play();
+
+            if (promise !== undefined) {
+              promise.catch(function() {
+                video.muted = true;
+                video.play().catch(function() {});
+              });
+            }
+          });
+
+          const iframes = document.querySelectorAll('iframe');
+
+          iframes.forEach(function(iframe) {
+            try {
+              let src = iframe.src || '';
+
+              if (!src) return;
+
+              let params = [];
+
+              if (!src.includes('autoplay=')) {
+                params.push('autoplay=1');
+              }
+
+              if (!src.includes('mute=')) {
+                params.push('mute=0');
+              }
+
+              if (!src.includes('playsinline=')) {
+                params.push('playsinline=1');
+              }
+
+              if (params.length > 0) {
+                const separator = src.includes('?') ? '&' : '?';
+                iframe.src = src + separator + params.join('&');
+              }
+
+              iframe.allow =
+                'autoplay; fullscreen; encrypted-media; picture-in-picture';
+
+              iframe.setAttribute(
+                'allow',
+                'autoplay; fullscreen; encrypted-media; picture-in-picture'
+              );
+            } catch (e) {}
+          });
+
+          const possiblePlayButtons = document.querySelectorAll(
+            'button, [role="button"], .play, .play-button, .vjs-play-control, .dm-player-control-play'
+          );
+
+          possiblePlayButtons.forEach(function(button) {
+            try {
+              const label = (
+                button.getAttribute('aria-label') ||
+                button.getAttribute('title') ||
+                button.innerText ||
+                ''
+              ).toLowerCase();
+
+              const className = button.className
+                ? button.className.toString().toLowerCase()
+                : '';
+
+              if (
+                label.includes('play') ||
+                label.includes('reproducir') ||
+                label.includes('mirar') ||
+                className.includes('play')
+              ) {
+                button.click();
+              }
+            } catch (e) {}
+          });
+        })();
       ''');
     } catch (_) {
       // Algunas páginas bloquean JavaScript externo.
-      // No rompemos la app por eso.
     }
   }
 
@@ -243,6 +358,7 @@ class _VideoPanelState extends State<VideoPanel> {
 
   @override
   void dispose() {
+    _stopAutoplayAttempts();
     _disposeVideoController();
     super.dispose();
   }
@@ -258,13 +374,12 @@ class _VideoPanelState extends State<VideoPanel> {
           Positioned.fill(
             child: _buildContent(channel),
           ),
-
           if (_isLoading) _buildLoadingOverlay(channel),
-
           if (_hasError) _buildErrorOverlay(channel),
-
           if (!_isLoading && !_hasError && channel != null)
             _buildChannelHeader(channel),
+          if (!_isLoading && !_hasError && channel != null)
+            _buildFullScreenButton(),
         ],
       ),
     );
@@ -495,6 +610,29 @@ class _VideoPanelState extends State<VideoPanel> {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFullScreenButton() {
+    return Positioned(
+      right: 16,
+      top: 16,
+      child: Material(
+        color: Colors.black.withValues(alpha: 0.55),
+        borderRadius: BorderRadius.circular(14),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(14),
+          onTap: widget.onToggleFullScreen,
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Icon(
+              widget.isFullScreen ? Icons.fullscreen_exit : Icons.fullscreen,
+              color: Colors.white,
+              size: 28,
+            ),
+          ),
         ),
       ),
     );
