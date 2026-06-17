@@ -176,9 +176,9 @@
   "name": "UNICANAL",
   "shortName": "UNI",
   "category": "Nacional",
-  "playerType": "webview",
-  "streamUrl": "",
-  "webUrl": "https://www.dailymotion.com/embed/video/x9ko9z8?autoplay=1&mute=1&controls=1&playsinline=1",
+  "playerType": "hls",
+  "streamUrl": "https://live2.eu-north-1b.cf.dmcdn.net/sec2(zxG9LeL9bWr47eEVIri17Dl6YFTXdm1sx0i8NRdG1LIGavRY0chYi-WMWjUHF1bz80BpBskgemfJFrXRhGxxZNqXehWDy0IotTfyQYyz3ciHlTxVVq4d3QFDByp0IXpp)/cloud/3/x9ko9z8/s/live-480.m3u8",
+  "webUrl": "https://unicanal.com.py/en-vivo/",
   "logoUrl": "",
   "httpHeaders": {
     "Referer": "https://unicanal.com.py/"
