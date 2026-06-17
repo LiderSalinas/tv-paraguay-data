@@ -172,19 +172,19 @@
     "isActive": true
   },
   {
-    "id": 14,
-    "name": "UNICANAL WEB",
-    "shortName": "UNI",
-    "category": "Nacional",
-    "playerType": "webview",
-    "streamUrl": "",
-    "webUrl": "https://unicanal.com.py/en-vivo/",
-    "logoUrl": "",
-    "httpHeaders": {
-      "Referer": "https://unicanal.com.py/"
-    },
-    "isActive": true
+  "id": 14,
+  "name": "UNICANAL",
+  "shortName": "UNI",
+  "category": "Nacional",
+  "playerType": "webview",
+  "streamUrl": "",
+  "webUrl": "https://www.dailymotion.com/embed/video/x9ko9z8?autoplay=1&mute=1&controls=1&playsinline=1",
+  "logoUrl": "",
+  "httpHeaders": {
+    "Referer": "https://unicanal.com.py/"
   },
+  "isActive": true
+ },
   {
     "id": 15,
     "name": "GEN TV WEB",
