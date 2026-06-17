@@ -186,31 +186,31 @@
   "isActive": true
  },
   {
-    "id": 15,
-    "name": "GEN TV WEB",
-    "shortName": "GEN",
-    "category": "Nacional",
-    "playerType": "webview",
-    "streamUrl": "",
-    "webUrl": "https://www.gen.com.py/",
-    "logoUrl": "",
-    "httpHeaders": {
-      "Referer": "https://www.gen.com.py/"
-    },
-    "isActive": true
+  "id": 15,
+  "name": "GEN TV",
+  "shortName": "GEN",
+  "category": "Nacional",
+  "playerType": "hls",
+  "streamUrl": "https://no.gendigi.net/origin-proxy/chunklist.m3u8",
+  "webUrl": "https://www.gen.com.py/live/",
+  "logoUrl": "",
+  "httpHeaders": {
+    "Referer": "https://www.gen.com.py/"
   },
+  "isActive": true
+},
   {
-    "id": 16,
-    "name": "ABC DIGITAL WEB",
-    "shortName": "ABC",
-    "category": "Noticias",
-    "playerType": "webview",
-    "streamUrl": "",
-    "webUrl": "https://www.abc.com.py/tv/",
-    "logoUrl": "",
-    "httpHeaders": {
-      "Referer": "https://www.abc.com.py/"
-    },
-    "isActive": true
-  }
+  "id": 16,
+  "name": "ABC DIGITAL",
+  "shortName": "ABC",
+  "category": "Noticias",
+  "playerType": "hls",
+  "streamUrl": "https://live2.eu-north-1a.cf.dmcdn.net/sec2(ZejGYXPpqZGhZrAq2PqMOIKkWAwlmqMCDyqzoYiFZoAgdRdWNdfXq-lpnOJQsJ8myKBewarxHm4HfVogho_0n0yVcmZPwHVPLtdR-8ofSIojmg75yNfSWrNLIgGH2GQ2)/cloud/3/x9skr3m/d/live-480.m3u8",
+  "webUrl": "https://www.abc.com.py/tv/",
+  "logoUrl": "",
+  "httpHeaders": {
+    "Referer": "https://www.abc.com.py/"
+  },
+  "isActive": true
+}
 ]
