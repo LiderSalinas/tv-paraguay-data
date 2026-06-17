@@ -226,5 +226,41 @@
     "Referer": "https://latele.com.py/"
   },
   "isActive": true
+},
+  {
+  "id": 18,
+  "name": "ASPEN TV",
+  "shortName": "ASPEN",
+  "category": "Nacional",
+  "playerType": "hls",
+  "streamUrl": "https://zn1gen.desdeparaguay.net/aspentv/aspentv/chunklist_w577907623.m3u8?k=ae500c9cda1a7f0a507e5f61dc0d38943d2e72105fd36ea84cd382d6c359a7ed&exp=1781706365",
+  "webUrl": "",
+  "logoUrl": "",
+  "httpHeaders": {},
+  "isActive": true
+},
+  {
+  "id": 19,
+  "name": "ESTACION 40 TV",
+  "shortName": "E40",
+  "category": "Nacional",
+  "playerType": "hls",
+  "streamUrl": "https://zn1tf.desdeparaguay.net/e40tv/e40tv_py_baja/chunklist_w422327283.m3u8?k=40a9dcc8f85b0379af4138c6bf4a18d645c5e5a0e7d81e19ec9914e44cb20c06&exp=1781706475",
+  "webUrl": "",
+  "logoUrl": "",
+  "httpHeaders": {},
+  "isActive": true
+},
+  {
+  "id": 20,
+  "name": "VENUS MEDIA",
+  "shortName": "VENUS",
+  "category": "Nacional",
+  "playerType": "hls",
+  "streamUrl": "https://zn1gen.desdeparaguay.net/venusmedia/venusmedia/chunklist_w1160860173.m3u8?k=7117c455f2e961877e7b58a00e502cb80a5f8f4e17aa296825bf3c859949032e&exp=1781707218",
+  "webUrl": "",
+  "logoUrl": "",
+  "httpHeaders": {},
+  "isActive": true
 }
 ]
