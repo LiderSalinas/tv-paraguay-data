@@ -201,7 +201,7 @@
   },
   {
     "id": 16,
-    "name": "ABC TV WEB",
+    "name": "ABC DIGITAL WEB",
     "shortName": "ABC",
     "category": "Noticias",
     "playerType": "webview",
@@ -211,126 +211,6 @@
     "httpHeaders": {
       "Referer": "https://www.abc.com.py/"
     },
-    "isActive": true
-  },
-  {
-    "id": 101,
-    "name": "UNICANAL HLS PRUEBA",
-    "shortName": "UNI",
-    "category": "Prueba HLS",
-    "playerType": "hls",
-    "streamUrl": "http://edge02-fdo-py.cvattv.com.ar/live/c5eds/UNICANAL_C4/verimatrix_rotating_FTA/UNICANAL_C4-video=3000000-audio_20000=144800.m3u8",
-    "webUrl": "",
-    "logoUrl": "",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 102,
-    "name": "TRECE HLS PRUEBA",
-    "shortName": "13",
-    "category": "Prueba HLS",
-    "playerType": "hls",
-    "streamUrl": "http://edge02-fdo-py.cvattv.com.ar/live/c5eds/RPC_C4/verimatrix_rotating_FTA/RPC_C4-video=3000000-audio_20000=144800.m3u8",
-    "webUrl": "",
-    "logoUrl": "",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 103,
-    "name": "ABC TV HLS PRUEBA",
-    "shortName": "ABC",
-    "category": "Prueba HLS",
-    "playerType": "hls",
-    "streamUrl": "http://edge02-fdo-py.cvattv.com.ar/live/c5eds/ABC_TV_C4/verimatrix_rotating_FTA/ABC_TV_C4-video=3000000-audio_20000=144800.m3u8",
-    "webUrl": "",
-    "logoUrl": "",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 104,
-    "name": "LATELE HLS PRUEBA",
-    "shortName": "LT",
-    "category": "Prueba HLS",
-    "playerType": "hls",
-    "streamUrl": "http://edge02-fdo-py.cvattv.com.ar/live/c5eds/LA_TELE_C4/verimatrix_rotating_FTA/LA_TELE_C4-video=1532000-audio_20000=144800.m3u8",
-    "webUrl": "",
-    "logoUrl": "",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 105,
-    "name": "PARAVISION HLS PRUEBA",
-    "shortName": "PVS",
-    "category": "Prueba HLS",
-    "playerType": "hls",
-    "streamUrl": "http://edge02-fdo-py.cvattv.com.ar/live/c5eds/PARAVISION_C4/verimatrix_rotating_FTA/PARAVISION_C4-video=3000000-audio_20000=144800.m3u8",
-    "webUrl": "",
-    "logoUrl": "",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 106,
-    "name": "SUR TV HLS PRUEBA",
-    "shortName": "SUR",
-    "category": "Prueba HLS",
-    "playerType": "hls",
-    "streamUrl": "http://edge02-fdo-py.cvattv.com.ar/live/c5eds/SUR_TV_C4/verimatrix_rotating_FTA/SUR_TV_C4-video=3000000-audio_20000=144800.m3u8",
-    "webUrl": "",
-    "logoUrl": "",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 107,
-    "name": "MI TV HLS PRUEBA",
-    "shortName": "MITV",
-    "category": "Prueba HLS",
-    "playerType": "hls",
-    "streamUrl": "https://tigocloud.desdeparaguay.net/mitv/mitv/chunklist_w680215671.m3u8",
-    "webUrl": "",
-    "logoUrl": "",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 108,
-    "name": "VISION VILLARRICA HLS PRUEBA",
-    "shortName": "VGV",
-    "category": "Prueba HLS",
-    "playerType": "hls",
-    "streamUrl": "http://inliveserver.com:1935/8312/8312/playlist.m3u8",
-    "webUrl": "",
-    "logoUrl": "",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 109,
-    "name": "RADIO ASUNCION TV HLS PRUEBA",
-    "shortName": "ASU",
-    "category": "Prueba HLS",
-    "playerType": "hls",
-    "streamUrl": "https://59ce1298bfb98.streamlock.net/asuncion1250/asuncion1250/chunklist_w2001769688.m3u8",
-    "webUrl": "",
-    "logoUrl": "",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 110,
-    "name": "RCC HLS PRUEBA",
-    "shortName": "RCC",
-    "category": "Prueba HLS",
-    "playerType": "hls",
-    "streamUrl": "https://59ce1298bfb98.streamlock.net/rcctv02/rcctv02/playlist.m3u8",
-    "webUrl": "",
-    "logoUrl": "",
-    "httpHeaders": {},
     "isActive": true
   }
 ]
