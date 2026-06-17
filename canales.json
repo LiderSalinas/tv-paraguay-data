@@ -158,19 +158,19 @@
     "isActive": true
   },
   {
-    "id": 13,
-    "name": "TRECE WEB",
-    "shortName": "13",
-    "category": "Nacional",
-    "playerType": "webview",
-    "streamUrl": "",
-    "webUrl": "https://trece.com.py/en-vivo/",
-    "logoUrl": "",
-    "httpHeaders": {
-      "Referer": "https://trece.com.py/"
-    },
-    "isActive": true
+  "id": 13,
+  "name": "TRECE",
+  "shortName": "13",
+  "category": "Nacional",
+  "playerType": "hls",
+  "streamUrl": "https://live2.eu-north-1a.cf.dmcdn.net/sec2(kQq2WPShPfIN6102GE4LMADfECQ7F29hXBYqRif92YpnevBPqiC6OC_f1SFThqK0dor3VsTr2Qmf5p_jPdbPqmENa32iEUHRQteEyQhNs9vxpailhTOEYp5qIZWaMKH3)/cloud/3/x9ksaba/s/live-480.m3u8",
+  "webUrl": "https://trece.com.py/en-vivo/",
+  "logoUrl": "",
+  "httpHeaders": {
+    "Referer": "https://trece.com.py/"
   },
+  "isActive": true
+ },
   {
   "id": 14,
   "name": "UNICANAL",
