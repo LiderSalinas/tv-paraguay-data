@@ -83,7 +83,7 @@
     "shortName": "MEGA",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://www.desde-paraguay.com/mega.m3u8",
+    "streamUrl": "https://live-sa.streann.tech/megacadena1/megacadena1/chunks.m3u8?auth=eyJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJhbm9ueW1vdXMiLCJleHAiOjE3ODI3NTMyNjAsInJpZCI6IjVlMzQ0YTRkMmNkY2JlMWM0OWZkODU2YyIsImtleSI6ImtleTEiLCJjaWQiOiI1ZTYyYjk2ZTJjZGNmYWMyZGQ4ODg1ZGQifQ.TAjIn0wVH0rseJEUJdvF5Qm6tkdHABokLc0U23ps92E",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/mega-tv.png",
     "httpHeaders": {
