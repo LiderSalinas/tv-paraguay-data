@@ -7,7 +7,7 @@
     "playerType": "hls",
     "streamUrl": "https://stream.paraguaytv.gov.py/memfs/bbe36fed-9b49-4d1d-adaa-4bd6d1b2e386.m3u8",
     "webUrl": "",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/paraguay-tv.png",
+    "logoUrl": "",
     "httpHeaders": {
       "Referer": "https://www.paraguaytv.gov.py/"
     },
@@ -21,7 +21,7 @@
     "playerType": "hls",
     "streamUrl": "https://copacogen.desdeparaguay.net/telefuturo/telefuturo_py_alta/playlist.m3u8?admin=tvaccion",
     "webUrl": "",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/telefuturo.png",
+    "logoUrl": "",
     "httpHeaders": {
       "Referer": "https://www.telefuturo.com.py/"
     },
@@ -35,7 +35,7 @@
     "playerType": "hls",
     "streamUrl": "https://alba-py-snt-snt.stream.mediatiquestream.com/index.m3u8",
     "webUrl": "",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/snt.png",
+    "logoUrl": "",
     "httpHeaders": {},
     "isActive": true
   },
@@ -47,7 +47,7 @@
     "playerType": "hls",
     "streamUrl": "https://copacogen.desdeparaguay.net/npy/npy_py_alta/playlist.m3u8?admin=tvaccion",
     "webUrl": "",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/npy.png",
+    "logoUrl": "",
     "httpHeaders": {
       "Referer": "https://www.npy.com.py/"
     },
@@ -61,7 +61,7 @@
     "playerType": "hls",
     "streamUrl": "https://alba-py-c9n-c9n.stream.mediatiquestream.com/index.m3u8",
     "webUrl": "",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/c9n.png",
+    "logoUrl": "",
     "httpHeaders": {},
     "isActive": true
   },
@@ -73,7 +73,7 @@
     "playerType": "hls",
     "streamUrl": "https://video.hostingcaaguazu.com:19360/cosmostv/cosmostv.m3u8",
     "webUrl": "",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/cosmos-tv.png",
+    "logoUrl": "",
     "httpHeaders": {},
     "isActive": true
   },
@@ -85,7 +85,7 @@
     "playerType": "hls",
     "streamUrl": "https://www.desde-paraguay.com/mega.m3u8",
     "webUrl": "",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/mega-tv.png",
+    "logoUrl": "",
     "httpHeaders": {
       "Referer": "https://megacadena.com.py/"
     },
@@ -99,7 +99,7 @@
     "playerType": "hls",
     "streamUrl": "https://www.desde-paraguay.com/pro.m3u8",
     "webUrl": "",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/canal-pro.png",
+    "logoUrl": "",
     "httpHeaders": {
       "Referer": "https://megacadena.com.py/"
     },
@@ -113,7 +113,7 @@
     "playerType": "hls",
     "streamUrl": "https://copacogen.desdeparaguay.net/nandutitv/nandutitv_baja/index.m3u8",
     "webUrl": "",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/nanduti-tv.png",
+    "logoUrl": "",
     "httpHeaders": {
       "Referer": "https://nanduti.com.py/nanduti-tv"
     },
@@ -127,7 +127,7 @@
     "playerType": "hls",
     "streamUrl": "https://rds3.desdeparaguay.net/republicatv/republicatv/playlist.m3u8",
     "webUrl": "",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/republica-tv.png",
+    "logoUrl": "",
     "httpHeaders": {},
     "isActive": true
   },
@@ -139,7 +139,7 @@
     "playerType": "hls",
     "streamUrl": "https://copacogen.desdeparaguay.net/monumentaltv/monumentaltv_med/playlist.m3u8?admin=tvaccion",
     "webUrl": "",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/monumental-tv.png",
+    "logoUrl": "",
     "httpHeaders": {
       "Referer": "https://www.monumental.com.py/"
     },
@@ -153,7 +153,7 @@
     "playerType": "hls",
     "streamUrl": "https://rds3.desdeparaguay.net/brunomasitv/brunomasitv/playlist.m3u8",
     "webUrl": "",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/bruno-masi-tv.png",
+    "logoUrl": "",
     "httpHeaders": {},
     "isActive": true
   },
@@ -162,13 +162,11 @@
     "name": "TRECE",
     "shortName": "13",
     "category": "Nacional",
-    "playerType": "hls",
-    "streamUrl": "https://live2.eu-north-1a.cf.dmcdn.net/sec2(kQq2WPShPfIN6102GE4LMADfECQ7F29hXBYqRif92YpnevBPqiC6OC_f1SFThqK0dor3VsTr2Qmf5p_jPdbPqmENa32iEUHRQteEyQhNs9vxpailhTOEYp5qIZWaMKH3)/cloud/3/x9ksaba/s/live-480.m3u8",
-    "webUrl": "https://trece.com.py/en-vivo/",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/trece.png",
-    "httpHeaders": {
-      "Referer": "https://trece.com.py/"
-    },
+    "playerType": "webview",
+    "streamUrl": "",
+    "webUrl": "https://www.dailymotion.com/embed/video/x9ksaba?autoplay=1&mute=0&ui-start-screen-info=0&queue-enable=false",
+    "logoUrl": "",
+    "httpHeaders": {},
     "isActive": true
   },
   {
@@ -176,13 +174,11 @@
     "name": "UNICANAL",
     "shortName": "UNI",
     "category": "Nacional",
-    "playerType": "hls",
-    "streamUrl": "https://live2.eu-north-1b.cf.dmcdn.net/sec2(zxG9LeL9bWr47eEVIri17Dl6YFTXdm1sx0i8NRdG1LIGavRY0chYi-WMWjUHF1bz80BpBskgemfJFrXRhGxxZNqXehWDy0IotTfyQYyz3ciHlTxVVq4d3QFDByp0IXpp)/cloud/3/x9ko9z8/s/live-480.m3u8",
-    "webUrl": "https://unicanal.com.py/en-vivo/",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/unicanal.png",
-    "httpHeaders": {
-      "Referer": "https://unicanal.com.py/"
-    },
+    "playerType": "webview",
+    "streamUrl": "",
+    "webUrl": "https://www.dailymotion.com/embed/video/x9ko9z8?autoplay=1&mute=0&ui-start-screen-info=0&queue-enable=false",
+    "logoUrl": "",
+    "httpHeaders": {},
     "isActive": true
   },
   {
@@ -192,11 +188,9 @@
     "category": "Nacional",
     "playerType": "hls",
     "streamUrl": "https://no.gendigi.net/origin-proxy/chunklist.m3u8",
-    "webUrl": "https://www.gen.com.py/live/",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/gen-tv.png",
-    "httpHeaders": {
-      "Referer": "https://www.gen.com.py/"
-    },
+    "webUrl": "",
+    "logoUrl": "",
+    "httpHeaders": {},
     "isActive": true
   },
   {
@@ -204,63 +198,23 @@
     "name": "ABC DIGITAL",
     "shortName": "ABC",
     "category": "Noticias",
-    "playerType": "hls",
-    "streamUrl": "https://live2.eu-north-1a.cf.dmcdn.net/sec2(ZejGYXPpqZGhZrAq2PqMOIKkWAwlmqMCDyqzoYiFZoAgdRdWNdfXq-lpnOJQsJ8myKBewarxHm4HfVogho_0n0yVcmZPwHVPLtdR-8ofSIojmg75yNfSWrNLIgGH2GQ2)/cloud/3/x9skr3m/d/live-480.m3u8",
-    "webUrl": "https://www.abc.com.py/tv/",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/abc-digital.png",
-    "httpHeaders": {
-      "Referer": "https://www.abc.com.py/"
-    },
-    "isActive": true
-  },
-  {
-  "id": 17,
-  "name": "LATELE",
-  "shortName": "LT",
-  "category": "Nacional",
-  "playerType": "hls",
-  "streamUrl": "https://copacotf.desdeparaguay.net/latele/latele_py_alta/playlist.m3u8?admin=tvaccion",
-  "webUrl": "https://www.latele.com.py/en-vivo",
-  "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/latele.png",
-  "httpHeaders": {
-    "Referer": "https://www.latele.com.py/"
-  },
-  "isActive": true
-},
-  {
-    "id": 18,
-    "name": "ASPEN TV",
-    "shortName": "ASPEN",
-    "category": "Nacional",
-    "playerType": "hls",
-    "streamUrl": "https://zn1gen.desdeparaguay.net/aspentv/aspentv/chunklist_w577907623.m3u8?k=ae500c9cda1a7f0a507e5f61dc0d38943d2e72105fd36ea84cd382d6c359a7ed&exp=1781706365",
-    "webUrl": "",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/aspen-tv.png",
+    "playerType": "webview",
+    "streamUrl": "",
+    "webUrl": "https://www.dailymotion.com/embed/video/x9skr3m?autoplay=1&mute=0&ui-start-screen-info=0&queue-enable=false",
+    "logoUrl": "",
     "httpHeaders": {},
     "isActive": true
   },
   {
-    "id": 19,
-    "name": "ESTACION 40 TV",
+    "id": 17,
+    "name": "E40 TV",
     "shortName": "E40",
-    "category": "Nacional",
-    "playerType": "hls",
-    "streamUrl": "https://zn1tf.desdeparaguay.net/e40tv/e40tv_py_baja/chunklist_w422327283.m3u8?k=40a9dcc8f85b0379af4138c6bf4a18d645c5e5a0e7d81e19ec9914e44cb20c06&exp=1781706475",
-    "webUrl": "",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/estacion-40-tv.png",
+    "category": "Musica",
+    "playerType": "webview",
+    "streamUrl": "",
+    "webUrl": "https://www.estacion40.com.py/",
+    "logoUrl": "",
     "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 20,
-    "name": "VENUS MEDIA",
-    "shortName": "VENUS",
-    "category": "Nacional",
-    "playerType": "hls",
-    "streamUrl": "https://zn1gen.desdeparaguay.net/venusmedia/venusmedia/chunklist_w1160860173.m3u8?k=7117c455f2e961877e7b58a00e502cb80a5f8f4e17aa296825bf3c859949032e&exp=1781707218",
-    "webUrl": "",
-    "logoUrl": "https://raw.githubusercontent.com/LiderSalinas/tv-paraguay-data/main/logos/venus-media.png",
-    "httpHeaders": {},
-    "isActive": true
+    "isActive": false
   }
 ]
