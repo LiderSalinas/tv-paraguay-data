@@ -163,7 +163,7 @@
     "shortName": "13",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://live2.eu-north-1a.cf.dmcdn.net/sec2(kQq2WPShPfIN6102GE4LMADfECQ7F29hXBYqRif92YpnevBPqiC6OC_f1SFThqK0dor3VsTr2Qmf5p_jPdbPqmENa32iEUHRQteEyQhNs9vxpailhTOEYp5qIZWaMKH3)/cloud/3/x9ksaba/s/live-480.m3u8",
+    "streamUrl": "https://live2.eu-north-1a.cf.dmcdn.net/sec2(PSkCNiUC3P7aaNxc5fkaQn_yM7bgMfoR7B3ILctsmQVS1aq_xD9aOx2YnhymKtNUrZL6wIlGtDCp5f5h4ROyU6-5PIlgSaNp2g-4sUCGwq0MvPJIkPXBL6xkWcIQmBZc)/cloud/3/x9ksaba/s/live-480.m3u8",
     "webUrl": "https://trece.com.py/en-vivo/",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/trece.png",
     "httpHeaders": {
@@ -177,7 +177,7 @@
     "shortName": "UNI",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://live2.eu-north-1b.cf.dmcdn.net/sec2(zxG9LeL9bWr47eEVIri17Dl6YFTXdm1sx0i8NRdG1LIGavRY0chYi-WMWjUHF1bz80BpBskgemfJFrXRhGxxZNqXehWDy0IotTfyQYyz3ciHlTxVVq4d3QFDByp0IXpp)/cloud/3/x9ko9z8/s/live-480.m3u8",
+    "streamUrl": "https://live2.eu-north-1b.cf.dmcdn.net/sec2(PCTAvmvw20Ogh54EkmoRumpFk2TRmXY1Tjkbf5Sa7XiqRCir4ejkrMgFFevhF39rm5AQDluy0851SBAQT6tJZ0vJNDifVrvRjZAHftJ8o1SJwJH3L6kASXcWzk311O5H)/cloud/3/x9ko9z8/s/live-480.m3u8",
     "webUrl": "https://unicanal.com.py/en-vivo/",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/unicanal.png",
     "httpHeaders": {
@@ -199,12 +199,12 @@
   },
   {
     "id": 16,
-    "name": "ABC DIGITAL WEB",
+    "name": "ABC DIGITAL",
     "shortName": "ABC",
     "category": "Noticias",
     "playerType": "webview",
     "streamUrl": "",
-    "webUrl": "https://www.abc.com.py/tv/",
+    "webUrl": "https://live2.eu-north-1b.cf.dmcdn.net/sec2(BaTxzPQ5WoQ7WfRdncn0eblXJYpk3b-zxCJIvKVEiVyEXMqV9rKwlXQzb5OwlBLVk2cQhjqV-7iGNUywfqkNZInTPGzees1Pit4xrvKitCB6VOJt9HP_dhPUXDxVGNKT)/cloud/3/x9skr3m/d/live-480.m3u8",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/abc-digital.png",
     "httpHeaders": {
       "Referer": "https://www.abc.com.py/"
@@ -246,11 +246,11 @@
     "category": "Musica",
     "playerType": "webview",
     "streamUrl": "",
-    "webUrl": "https://www.estacion40.com.py/",
+    "webUrl": "https://zn1tf.desdeparaguay.net/e40tv/e40tv_py_baja/chunklist_w2297555.m3u8?k=bd244471500f33fa1220245a6c52587354161f53ea5641f574db23b7ebc0e707&exp=1782743230",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/estacion-40-tv.png",
     "httpHeaders": {
       "Referer": "https://www.estacion40.com.py/"
     },
-    "isActive": false
+    "isActive": true
   }
 ]
