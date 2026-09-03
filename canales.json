@@ -33,7 +33,7 @@
     "shortName": "SNT",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://alba-py-snt-snt.stream.mediatiquestream.com/index.m3u8",
+    "streamUrl": "https://d3epa8orr2qy3m.cloudfront.net/ts:abr.m3u8",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/snt.png",
     "httpHeaders": {},
@@ -59,7 +59,7 @@
     "shortName": "C9N",
     "category": "Noticias",
     "playerType": "hls",
-    "streamUrl": "https://alba-py-c9n-c9n.stream.mediatiquestream.com/index.m3u8",
+    "streamUrl": "https://d174axghh54kh0.cloudfront.net/ts:abr.m3u8",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/c9n.png",
     "httpHeaders": {},
@@ -83,13 +83,13 @@
     "shortName": "MEGA",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://live-sa.streann.tech/megacadena1/megacadena1/chunks.m3u8?auth=eyJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJhbm9ueW1vdXMiLCJleHAiOjE3ODI3NTMyNjAsInJpZCI6IjVlMzQ0YTRkMmNkY2JlMWM0OWZkODU2YyIsImtleSI6ImtleTEiLCJjaWQiOiI1ZTYyYjk2ZTJjZGNmYWMyZGQ4ODg1ZGQifQ.TAjIn0wVH0rseJEUJdvF5Qm6tkdHABokLc0U23ps92E",
+    "streamUrl": "",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/mega-tv.png",
     "httpHeaders": {
       "Referer": "https://megacadena.com.py/"
     },
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 8,
@@ -163,13 +163,13 @@
     "shortName": "13",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://live2.eu-north-1a.cf.dmcdn.net/sec2(PSkCNiUC3P7aaNxc5fkaQn_yM7bgMfoR7B3ILctsmQVS1aq_xD9aOx2YnhymKtNUrZL6wIlGtDCp5f5h4ROyU6-5PIlgSaNp2g-4sUCGwq0MvPJIkPXBL6xkWcIQmBZc)/cloud/3/x9ksaba/s/live-480.m3u8",
-    "webUrl": "https://trece.com.py/en-vivo/",
+    "streamUrl": "",
+    "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/trece.png",
     "httpHeaders": {
       "Referer": "https://trece.com.py/"
     },
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 14,
@@ -177,13 +177,13 @@
     "shortName": "UNI",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://live2.eu-north-1b.cf.dmcdn.net/sec2(PCTAvmvw20Ogh54EkmoRumpFk2TRmXY1Tjkbf5Sa7XiqRCir4ejkrMgFFevhF39rm5AQDluy0851SBAQT6tJZ0vJNDifVrvRjZAHftJ8o1SJwJH3L6kASXcWzk311O5H)/cloud/3/x9ko9z8/s/live-480.m3u8",
-    "webUrl": "https://unicanal.com.py/en-vivo/",
+    "streamUrl": "",
+    "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/unicanal.png",
     "httpHeaders": {
       "Referer": "https://unicanal.com.py/"
     },
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 15,
@@ -191,25 +191,25 @@
     "shortName": "GEN",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://no.gendigi.net/origin-proxy/chunklist.m3u8",
+    "streamUrl": "",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/gen-tv.png",
     "httpHeaders": {},
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 16,
     "name": "ABC DIGITAL",
     "shortName": "ABC",
     "category": "Noticias",
-    "playerType": "webview",
+    "playerType": "hls",
     "streamUrl": "",
-    "webUrl": "https://live2.eu-north-1b.cf.dmcdn.net/sec2(BaTxzPQ5WoQ7WfRdncn0eblXJYpk3b-zxCJIvKVEiVyEXMqV9rKwlXQzb5OwlBLVk2cQhjqV-7iGNUywfqkNZInTPGzees1Pit4xrvKitCB6VOJt9HP_dhPUXDxVGNKT)/cloud/3/x9skr3m/d/live-480.m3u8",
+    "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/abc-digital.png",
     "httpHeaders": {
       "Referer": "https://www.abc.com.py/"
     },
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 17,
@@ -218,7 +218,7 @@
     "category": "Musica",
     "playerType": "hls",
     "streamUrl": "https://zn1gen.desdeparaguay.net/venusmedia/venusmedia/playlist.m3u8",
-    "webUrl": "https://www.venus.com.py/envivo",
+    "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/venus-media.png",
     "httpHeaders": {
       "Referer": "https://www.venus.com.py/"
@@ -232,7 +232,7 @@
     "category": "Musica",
     "playerType": "hls",
     "streamUrl": "https://zn1gen.desdeparaguay.net/aspentv/aspentv/playlist.m3u8",
-    "webUrl": "https://www.radioaspen.com.py/",
+    "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/aspen-tv.png",
     "httpHeaders": {
       "Referer": "https://www.radioaspen.com.py/"
@@ -244,13 +244,25 @@
     "name": "E40 TV",
     "shortName": "E40",
     "category": "Musica",
-    "playerType": "webview",
+    "playerType": "hls",
     "streamUrl": "",
-    "webUrl": "https://zn1tf.desdeparaguay.net/e40tv/e40tv_py_baja/chunklist_w2297555.m3u8?k=bd244471500f33fa1220245a6c52587354161f53ea5641f574db23b7ebc0e707&exp=1782743230",
+    "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/estacion-40-tv.png",
     "httpHeaders": {
       "Referer": "https://www.estacion40.com.py/"
     },
+    "isActive": false
+  },
+  {
+    "id": 20,
+    "name": "OASIS TV",
+    "shortName": "OASIS",
+    "category": "Regional",
+    "playerType": "hls",
+    "streamUrl": "https://video.hostingcaaguazu.com:19360/oasistv/oasistv.m3u8",
+    "webUrl": "",
+    "logoUrl": "https://tvonline.com.py/tv/img/oasistv.png",
+    "httpHeaders": {},
     "isActive": true
   }
 ]
