@@ -163,13 +163,13 @@
     "shortName": "13",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "",
+    "streamUrl": "https://live2.eu-north-1b.cf.dmcdn.net/sec2(e5HPuEAICyrwlnObV9H1NzkKVp4aoDDGVL_VMQ07u6hrsvzo5Gi4m6HJ3O82TpmXbS-0qMILcjhGQfmszhsDS4p059fQmqfCA8ThCuuGxAF-IUWK5kgYid0BHDrOob61eep0IJQRgJGmHWxVE3w5sw)/cloud/3/xak2neu/s/live-480.m3u8",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/trece.png",
     "httpHeaders": {
       "Referer": "https://trece.com.py/"
     },
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 14,
@@ -177,13 +177,13 @@
     "shortName": "UNI",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "",
+    "streamUrl": "https://live2.eu-north-1a.cf.dmcdn.net/sec2(Jd25yugNx24W27hc6XUV1ZDT43aJbxocLmba-yXGTE17kSlT4hDbdM96WYcSfy3moqeFkg0G5YvM9EmvUfZmOFGmWkqQQ9mfs2Te3aeDjAY4aAJy5z8BYDipjE8z6hS_bd1y35yrQJSYlJIRG38e9w)/cloud/3/xak2lou/s/live-480.m3u8",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/unicanal.png",
     "httpHeaders": {
       "Referer": "https://unicanal.com.py/"
     },
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 15,
@@ -191,11 +191,13 @@
     "shortName": "GEN",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "",
+    "streamUrl": "https://zn1gen.desdeparaguay.net/gentv/gentv_py_baja/chunklist_w1711267819.m3u8?k=afffbc15c405e77dbd5ef3d7c5a504b0c514738e2d53d42ce217c1a0d1e2f6b8&exp=1788786301",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/gen-tv.png",
-    "httpHeaders": {},
-    "isActive": false
+    "httpHeaders": {
+      "Referer": "https://www.gen.com.py/"
+    },
+    "isActive": true
   },
   {
     "id": 16,
@@ -203,13 +205,13 @@
     "shortName": "ABC",
     "category": "Noticias",
     "playerType": "hls",
-    "streamUrl": "",
+    "streamUrl": "https://live2.eu-north-1a.cf.dmcdn.net/sec2(-cLqRkalZy8UDoJZl-i7YpYf7S83ZU3PWZWOFC4dSiQLbNuC8YjdEB_o3dyMknbUmoKILAYEWqNI8PSMzu9bqAMVYtTrSOrLQoKxalQ8aUIQ97wNXRCZR2WL-vLO4d-L)/cloud/3/x9skr3m/d/live-480.m3u8",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/abc-digital.png",
     "httpHeaders": {
       "Referer": "https://www.abc.com.py/"
     },
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 17,
