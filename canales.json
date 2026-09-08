@@ -191,7 +191,7 @@
     "shortName": "GEN",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://zn1gen.desdeparaguay.net/gentv/gentv_py_baja/chunklist_w1711267819.m3u8?k=afffbc15c405e77dbd5ef3d7c5a504b0c514738e2d53d42ce217c1a0d1e2f6b8&exp=1788786301",
+    "streamUrl": "https://copacogen.desdeparaguay.net/gentv/gentv_py_baja/playlist.m3u8?k=e67f3da2bbf79fb37a3a00d86055fc468774bff8f340409b6488c2df5da526fd&exp=1788874211",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/gen-tv.png",
     "httpHeaders": {
