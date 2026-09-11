@@ -191,7 +191,7 @@
     "shortName": "GEN",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://copacogen.desdeparaguay.net/gentv/gentv_py_baja/playlist.m3u8?k=f52db21d710703ce243da5bbc43ea78c9563aea4861e628b7de034ed1ff59b85&exp=1789130647",
+    "streamUrl": "https://zn1gen.desdeparaguay.net/gentv/gentv_py_baja/chunklist_w223050867.m3u8?k=78c96ff180d49d0ee625cb7189859607c8989a86a811827b7b144f35f3e28acd&exp=1789138943",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/gen-tv.png",
     "httpHeaders": {
@@ -205,7 +205,7 @@
     "shortName": "ABC",
     "category": "Noticias",
     "playerType": "hls",
-    "streamUrl": "https://live2.eu-north-1a.cf.dmcdn.net/sec2(-cLqRkalZy8UDoJZl-i7YpYf7S83ZU3PWZWOFC4dSiQLbNuC8YjdEB_o3dyMknbUmoKILAYEWqNI8PSMzu9bqAMVYtTrSOrLQoKxalQ8aUIQ97wNXRCZR2WL-vLO4d-L)/cloud/3/x9skr3m/d/live-480.m3u8",
+    "streamUrl": "https://live2.eu-north-1b.cf.dmcdn.net/sec2(-3Z4k9ynNa70NMdt-CUfI8HrUyAvfJ-eKYaMddnGjc6CVsdoRzD052gQ87nYMqphSauHyASwUMmeT1hDFUJvjwFYQopZmdq-qoDJs2oOm_zzt_6lsXA4Yte18vsDgjCI)/cloud/3/x9skr3m/d/live-480.m3u8",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/abc-digital.png",
     "httpHeaders": {
