@@ -422,5 +422,17 @@
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
     "httpHeaders": {},
     "isActive": true
+  },
+  {
+    "id": 34,
+    "name": "PLAY DEPORTES (PRUEBA)",
+    "shortName": "PLAY",
+    "category": "Deportes",
+    "playerType": "hls",
+    "streamUrl": "http://45.134.141.161:2200/ARG/Tigo_Sports/tracks-v1a1/mono.m3u8",
+    "webUrl": "",
+    "logoUrl": "",
+    "httpHeaders": {},
+    "isActive": true
   }
 ]
