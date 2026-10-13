@@ -164,7 +164,7 @@
     "category": "Nacional",
     "playerType": "hls",
     "streamUrl": "https://live2.eu-north-1b.cf.dmcdn.net/sec2(e5HPuEAICyrwlnObV9H1NzkKVp4aoDDGVL_VMQ07u6hrsvzo5Gi4m6HJ3O82TpmXbS-0qMILcjhGQfmszhsDS4p059fQmqfCA8ThCuuGxAF-IUWK5kgYid0BHDrOob61eep0IJQRgJGmHWxVE3w5sw)/cloud/3/xak2neu/s/live-480.m3u8",
-    "webUrl": "",
+    "webUrl": "https://www.trece.com.py/",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/trece.png",
     "httpHeaders": {
       "Referer": "https://trece.com.py/"
@@ -178,7 +178,7 @@
     "category": "Nacional",
     "playerType": "hls",
     "streamUrl": "https://live2.eu-north-1a.cf.dmcdn.net/sec2(Jd25yugNx24W27hc6XUV1ZDT43aJbxocLmba-yXGTE17kSlT4hDbdM96WYcSfy3moqeFkg0G5YvM9EmvUfZmOFGmWkqQQ9mfs2Te3aeDjAY4aAJy5z8BYDipjE8z6hS_bd1y35yrQJSYlJIRG38e9w)/cloud/3/xak2lou/s/live-480.m3u8",
-    "webUrl": "",
+    "webUrl": "https://www.unicanal.com.py/",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/unicanal.png",
     "httpHeaders": {
       "Referer": "https://unicanal.com.py/"
@@ -192,7 +192,7 @@
     "category": "Nacional",
     "playerType": "hls",
     "streamUrl": "https://zn1gen.desdeparaguay.net/gentv/gentv_py_baja/chunklist_w223050867.m3u8?k=78c96ff180d49d0ee625cb7189859607c8989a86a811827b7b144f35f3e28acd&exp=1789138943",
-    "webUrl": "",
+    "webUrl": "https://www.gen.com.py/",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/gen-tv.png",
     "httpHeaders": {
       "Referer": "https://www.gen.com.py/"
@@ -206,7 +206,7 @@
     "category": "Noticias",
     "playerType": "hls",
     "streamUrl": "https://live2.eu-north-1b.cf.dmcdn.net/sec2(-3Z4k9ynNa70NMdt-CUfI8HrUyAvfJ-eKYaMddnGjc6CVsdoRzD052gQ87nYMqphSauHyASwUMmeT1hDFUJvjwFYQopZmdq-qoDJs2oOm_zzt_6lsXA4Yte18vsDgjCI)/cloud/3/x9skr3m/d/live-480.m3u8",
-    "webUrl": "",
+    "webUrl": "https://www.abc.com.py/tv/",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/abc-digital.png",
     "httpHeaders": {
       "Referer": "https://www.abc.com.py/"
@@ -262,7 +262,7 @@
     "category": "Regional",
     "playerType": "hls",
     "streamUrl": "https://video.hostingcaaguazu.com:19360/oasistv/oasistv.m3u8",
-    "webUrl": "",
+    "webUrl": "https://tvonline.com.py/oasistv/",
     "logoUrl": "https://tvonline.com.py/tv/img/oasistv.png",
     "httpHeaders": {},
     "isActive": true
