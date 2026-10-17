@@ -167,11 +167,11 @@
     "shortName": "13",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://live2.eu-north-1b.cf.dmcdn.net/sec2(e5HPuEAICyrwlnObV9H1NzkKVp4aoDDGVL_VMQ07u6hrsvzo5Gi4m6HJ3O82TpmXbS-0qMILcjhGQfmszhsDS4p059fQmqfCA8ThCuuGxAF-IUWK5kgYid0BHDrOob61eep0IJQRgJGmHWxVE3w5sw)/cloud/3/xak2neu/s/live-480.m3u8",
-    "webUrl": "https://www.trece.com.py/",
+    "streamUrl": "http://45.170.130.224:8000/play/a050/index.m3u8?hls",
+    "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/trece.png",
     "httpHeaders": {
-      "Referer": "https://trece.com.py/"
+      "User-Agent": "Mozilla/5.0"
     },
     "isActive": true
   },
@@ -181,11 +181,11 @@
     "shortName": "UNI",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://live2.eu-north-1a.cf.dmcdn.net/sec2(Jd25yugNx24W27hc6XUV1ZDT43aJbxocLmba-yXGTE17kSlT4hDbdM96WYcSfy3moqeFkg0G5YvM9EmvUfZmOFGmWkqQQ9mfs2Te3aeDjAY4aAJy5z8BYDipjE8z6hS_bd1y35yrQJSYlJIRG38e9w)/cloud/3/xak2lou/s/live-480.m3u8",
-    "webUrl": "https://www.unicanal.com.py/",
+    "streamUrl": "http://45.170.130.224:8000/play/a04y/index.m3u8?hls",
+    "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/unicanal.png",
     "httpHeaders": {
-      "Referer": "https://unicanal.com.py/"
+      "User-Agent": "Mozilla/5.0"
     },
     "isActive": true
   },
