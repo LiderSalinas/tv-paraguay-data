@@ -321,7 +321,7 @@
     "webUrl": "",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
     "httpHeaders": {},
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 25,
@@ -357,7 +357,7 @@
     "webUrl": "",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/ESPN2_logo.svg/960px-ESPN2_logo.svg.png",
     "httpHeaders": {},
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 28,
@@ -369,7 +369,7 @@
     "webUrl": "",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
     "httpHeaders": {},
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 29,
@@ -381,7 +381,7 @@
     "webUrl": "",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
     "httpHeaders": {},
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 30,
@@ -393,7 +393,7 @@
     "webUrl": "",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
     "httpHeaders": {},
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 31,
@@ -405,7 +405,7 @@
     "webUrl": "",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
     "httpHeaders": {},
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 32,
@@ -417,7 +417,7 @@
     "webUrl": "",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
     "httpHeaders": {},
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 33,
@@ -429,7 +429,7 @@
     "webUrl": "",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
     "httpHeaders": {},
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 34,
