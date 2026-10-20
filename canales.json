@@ -313,15 +313,16 @@
   },
   {
     "id": 24,
-    "name": "ESPN LATINOAMERICA",
+    "name": "ESPN — DISNEY+",
     "shortName": "ESPN",
     "category": "Deportes",
-    "playerType": "hls",
-    "streamUrl": "https://barinaslive1.boldmss.com/ESPN/ESPN.isml/ESPN.m3u8",
+    "playerType": "externalApp",
+    "streamUrl": "",
     "webUrl": "",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
     "httpHeaders": {},
-    "isActive": false
+    "isActive": true,
+    "externalPackage": "com.disney.disneyplus"
   },
   {
     "id": 25,
