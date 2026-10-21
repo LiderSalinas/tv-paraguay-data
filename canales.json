@@ -317,7 +317,7 @@
     "shortName": "ESPN",
     "category": "Deportes",
     "playerType": "hls",
-    "streamUrl": "http://190.61.47.54:8000/play/a004/index.m3u8",
+    "streamUrl": "https://barinaslive1.boldmss.com/ESPN/ESPN.isml/ESPN.m3u8",
     "webUrl": "",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
     "httpHeaders": {
@@ -355,7 +355,7 @@
     "shortName": "ESPN2",
     "category": "Deportes",
     "playerType": "hls",
-    "streamUrl": "http://190.61.47.54:8000/play/a005/index.m3u8",
+    "streamUrl": "https://barinaslive1.boldmss.com/ESPN_2/ESPN_2.isml/ESPN_2.m3u8",
     "webUrl": "",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/ESPN2_logo.svg/960px-ESPN2_logo.svg.png",
     "httpHeaders": {
@@ -373,7 +373,7 @@
     "webUrl": "",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
     "httpHeaders": {},
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 29,
@@ -397,7 +397,7 @@
     "webUrl": "",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
     "httpHeaders": {},
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 31,
@@ -409,7 +409,7 @@
     "webUrl": "",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
     "httpHeaders": {},
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 32,
@@ -421,7 +421,7 @@
     "webUrl": "",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
     "httpHeaders": {},
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 33,
