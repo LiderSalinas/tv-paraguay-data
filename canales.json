@@ -33,7 +33,7 @@
     "shortName": "SNT",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://d6qmllupbc5d2.cloudfront.net/hls/25646ipbno2g/2_3/index.m3u8",
+    "streamUrl": "https://d2h2wh04y3aqtb.cloudfront.net/hls/25646ipbno2g/6_3/index.m3u8",
     "webUrl": "https://www.snt.com.py/envivo/",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/snt.png",
     "httpHeaders": {
@@ -61,7 +61,7 @@
     "shortName": "C9N",
     "category": "Noticias",
     "playerType": "hls",
-    "streamUrl": "https://d2h2wh04y3aqtb.cloudfront.net/hls/qnxsy62odjyb/3_4/index.m3u8",
+    "streamUrl": "https://d6qmllupbc5d2.cloudfront.net/hls/qnxsy62odjyb/6_4/index.m3u8",
     "webUrl": "https://www.c9n.com.py/envivo/",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/c9n.png",
     "httpHeaders": {
