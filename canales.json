@@ -209,7 +209,7 @@
     "shortName": "ABC",
     "category": "Noticias",
     "playerType": "hls",
-    "streamUrl": "https://live2.eu-north-1b.cf.dmcdn.net/sec2(-3Z4k9ynNa70NMdt-CUfI8HrUyAvfJ-eKYaMddnGjc6CVsdoRzD052gQ87nYMqphSauHyASwUMmeT1hDFUJvjwFYQopZmdq-qoDJs2oOm_zzt_6lsXA4Yte18vsDgjCI)/cloud/3/x9skr3m/d/live-480.m3u8",
+    "streamUrl": "https://live2.eu-north-1b.cf.dmcdn.net/sec2(OTLnRszBrl93VHbpXXP0PmkEx4NMMxRiBGRqOUxeKDO-LBTh9Rhr7P6jHOfa9m28_nZtvtSk1PZRBtIIGYCtTQJdmf0pP-2Q5B7qhWB9gByC0C-cwKoAQVgw3Pmzk42x)/cloud/3/x9skr3m/d/live-480.m3u8",
     "webUrl": "https://www.abc.com.py/tv/",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/abc-digital.png",
     "httpHeaders": {
