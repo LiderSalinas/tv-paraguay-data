@@ -448,5 +448,19 @@
     "logoUrl": "",
     "httpHeaders": {},
     "isActive": true
+  },
+  {
+    "id": 35,
+    "name": "LA TELE",
+    "shortName": "LATELE",
+    "category": "Nacional",
+    "playerType": "hls",
+    "streamUrl": "https://rds3tf.desdeparaguay.net/latele/latele_int_med/playlist.m3u8?k=f1b852f2db4bae84ab57604fd58ec9fa5e0db06d73271df438245f162bfebf05&exp=1794180844",
+    "webUrl": "",
+    "logoUrl": "https://i.imgur.com/Qcf6Qev.png",
+    "httpHeaders": {
+      "Referer": "https://www.desdepylabs.com/External/tvaccion/latele"
+    },
+    "isActive": true
   }
 ]
