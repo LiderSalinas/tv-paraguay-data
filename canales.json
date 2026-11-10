@@ -141,11 +141,11 @@
     "shortName": "MON",
     "category": "Noticias",
     "playerType": "hls",
-    "streamUrl": "https://copacogen.desdeparaguay.net/monumentaltv/monumentaltv_med/playlist.m3u8?admin=tvaccion",
+    "streamUrl": "https://rds3tf.desdeparaguay.net/monumentaltv/monumentaltv_int_med/playlist.m3u8?k=797a477cccfe7f613e2b3d1224b71250bca8caeca9411ab7be9462901694ab09&exp=1794311957",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/monumental-tv.png",
     "httpHeaders": {
-      "Referer": "https://www.monumental.com.py/"
+      "Referer": "https://www.desdepylabs.com/External/monumentaltv/monumentaltv"
     },
     "isActive": true
   },
@@ -453,12 +453,10 @@
     "shortName": "LATELE",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://rds3tf.desdeparaguay.net/latele/latele_int_med/playlist.m3u8?k=f1b852f2db4bae84ab57604fd58ec9fa5e0db06d73271df438245f162bfebf05&exp=1794180844",
+    "streamUrl": "http://190.128.214.97:64333/play/a03i/index.m3u8",
     "webUrl": "",
     "logoUrl": "https://i.imgur.com/Qcf6Qev.png",
-    "httpHeaders": {
-      "Referer": "https://www.desdepylabs.com/External/tvaccion/latele"
-    },
+    "httpHeaders": {},
     "isActive": true
   }
 ]
