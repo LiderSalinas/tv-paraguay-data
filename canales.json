@@ -141,7 +141,7 @@
     "shortName": "MON",
     "category": "Noticias",
     "playerType": "hls",
-    "streamUrl": "https://rds3tf.desdeparaguay.net/monumentaltv/monumentaltv_int_med/playlist.m3u8?k=797a477cccfe7f613e2b3d1224b71250bca8caeca9411ab7be9462901694ab09&exp=1794311957",
+    "streamUrl": "https://rds3tf.desdeparaguay.net/monumentaltv/monumentaltv_int_med/playlist.m3u8?k=4683485461eb3c17432da37bbe32da10cc613e0f4b338a2fc7957ed54ba6f749&exp=1794398718",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/monumental-tv.png",
     "httpHeaders": {
