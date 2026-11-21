@@ -167,7 +167,7 @@
     "shortName": "13",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "http://45.170.130.224:8000/play/a050/index.m3u8?hls",
+    "streamUrl": "https://tv.mitvparaguay.com/hls?id=trece&type=hls",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/trece.png",
     "httpHeaders": {
