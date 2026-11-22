@@ -441,7 +441,7 @@
     "shortName": "PLAY",
     "category": "Deportes",
     "playerType": "hls",
-    "streamUrl": "http://45.170.130.224:8000/play/a04k/index.m3u8?hls",
+    "streamUrl": "http://45.134.141.161:2200/ARG/Tigo_Sports/tracks-v1a1/mono.m3u8",
     "webUrl": "",
     "logoUrl": "",
     "httpHeaders": {},
