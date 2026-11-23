@@ -47,7 +47,7 @@
     "shortName": "NPY",
     "category": "Noticias",
     "playerType": "hls",
-    "streamUrl": "https://copacogen.desdeparaguay.net/npy/npy_py_alta/playlist.m3u8?admin=tvaccion",
+    "streamUrl": "https://rds3tf.desdeparaguay.net/npy/npy_int_med/playlist.m3u8?k=931f7fd58f16a09c2878355b1c74c07f00683e8810b51cbb8e6bfaff72b2717f&exp=1795437790",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/npy.png",
     "httpHeaders": {
@@ -153,7 +153,7 @@
     "shortName": "MON",
     "category": "Noticias",
     "playerType": "hls",
-    "streamUrl": "https://rds3tf.desdeparaguay.net/monumentaltv/monumentaltv_int_med/playlist.m3u8?k=4683485461eb3c17432da37bbe32da10cc613e0f4b338a2fc7957ed54ba6f749&exp=1794398718",
+    "streamUrl": "https://rds3tf.desdeparaguay.net/monumentaltv/monumentaltv_int_med/playlist.m3u8?k=595792c83bb048e9ddb13f00c956f816859d6df18b1586859c025a1e4194b274&exp=1795437645",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/monumental-tv.png",
     "httpHeaders": {
