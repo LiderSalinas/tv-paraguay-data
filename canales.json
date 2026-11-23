@@ -458,5 +458,17 @@
     "logoUrl": "https://i.imgur.com/Qcf6Qev.png",
     "httpHeaders": {},
     "isActive": true
+  },
+  {
+    "id": 36,
+    "name": "AMÉRICA TV PARAGUAY",
+    "shortName": "AMÉRICA",
+    "category": "Nacional",
+    "playerType": "hls",
+    "streamUrl": "https://america-live.argosworkspace.com/america/main_stream.m3u8",
+    "webUrl": "",
+    "logoUrl": "",
+    "httpHeaders": {},
+    "isActive": true
   }
 ]
