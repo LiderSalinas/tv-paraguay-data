@@ -125,18 +125,30 @@
   },
   {
     "id": 10,
-    "name": "REPUBLICA TV",
-    "shortName": "REP",
-    "category": "Noticias",
+    "name": "AMÉRICA TV PARAGUAY",
+    "shortName": "AMÉRICA",
+    "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://rds3.desdeparaguay.net/republicatv/republicatv/playlist.m3u8",
+    "streamUrl": "https://america-live.argosworkspace.com/america/main_stream.m3u8",
     "webUrl": "",
-    "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/republica-tv.png",
+    "logoUrl": "https://i.imgur.com/0COKxet.png",
     "httpHeaders": {},
     "isActive": true
   },
   {
     "id": 11,
+    "name": "LA TELE",
+    "shortName": "LATELE",
+    "category": "Nacional",
+    "playerType": "hls",
+    "streamUrl": "https://copacotf.desdeparaguay.net/latele/latele_py_alta/playlist.m3u8?admin=tvaccion",
+    "webUrl": "",
+    "logoUrl": "https://i.imgur.com/Qcf6Qev.png",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 12,
     "name": "MONUMENTAL TV",
     "shortName": "MON",
     "category": "Noticias",
@@ -150,7 +162,19 @@
     "isActive": true
   },
   {
-    "id": 12,
+    "id": 13,
+    "name": "REPUBLICA TV",
+    "shortName": "REP",
+    "category": "Noticias",
+    "playerType": "hls",
+    "streamUrl": "https://rds3.desdeparaguay.net/republicatv/republicatv/playlist.m3u8",
+    "webUrl": "",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/republica-tv.png",
+    "httpHeaders": {},
+    "isActive": true
+  },
+  {
+    "id": 14,
     "name": "BRUNO MASI TV",
     "shortName": "BM",
     "category": "Regional",
@@ -162,7 +186,7 @@
     "isActive": true
   },
   {
-    "id": 13,
+    "id": 15,
     "name": "TRECE",
     "shortName": "13",
     "category": "Nacional",
@@ -176,7 +200,7 @@
     "isActive": true
   },
   {
-    "id": 14,
+    "id": 16,
     "name": "UNICANAL",
     "shortName": "UNI",
     "category": "Nacional",
@@ -190,7 +214,7 @@
     "isActive": true
   },
   {
-    "id": 15,
+    "id": 17,
     "name": "GEN TV",
     "shortName": "GEN",
     "category": "Nacional",
@@ -204,7 +228,7 @@
     "isActive": true
   },
   {
-    "id": 16,
+    "id": 18,
     "name": "ABC DIGITAL",
     "shortName": "ABC",
     "category": "Noticias",
@@ -216,7 +240,7 @@
     "isActive": true
   },
   {
-    "id": 17,
+    "id": 19,
     "name": "VENUS MEDIA",
     "shortName": "VENUS",
     "category": "Musica",
@@ -230,7 +254,7 @@
     "isActive": true
   },
   {
-    "id": 18,
+    "id": 20,
     "name": "ASPEN TV",
     "shortName": "ASPEN",
     "category": "Musica",
@@ -244,7 +268,7 @@
     "isActive": true
   },
   {
-    "id": 19,
+    "id": 21,
     "name": "E40 TV",
     "shortName": "E40",
     "category": "Musica",
@@ -258,7 +282,7 @@
     "isActive": false
   },
   {
-    "id": 20,
+    "id": 22,
     "name": "OASIS TV",
     "shortName": "OASIS",
     "category": "Regional",
@@ -274,7 +298,7 @@
     "isActive": true
   },
   {
-    "id": 21,
+    "id": 23,
     "name": "RED BULL TV ES",
     "shortName": "RBES",
     "category": "Deportes",
@@ -286,7 +310,7 @@
     "isActive": true
   },
   {
-    "id": 22,
+    "id": 24,
     "name": "FIFA+ LATINOAMERICA",
     "shortName": "FIFA+",
     "category": "Deportes",
@@ -298,7 +322,7 @@
     "isActive": true
   },
   {
-    "id": 23,
+    "id": 25,
     "name": "TYC SPORTS",
     "shortName": "TYC",
     "category": "Deportes",
@@ -310,7 +334,7 @@
     "isActive": true
   },
   {
-    "id": 24,
+    "id": 26,
     "name": "ESPN LATINOAMERICA",
     "shortName": "ESPN",
     "category": "Deportes",
@@ -324,7 +348,7 @@
     "isActive": true
   },
   {
-    "id": 25,
+    "id": 27,
     "name": "TELEDEPORTE",
     "shortName": "TDP",
     "category": "Deportes",
@@ -336,7 +360,7 @@
     "isActive": true
   },
   {
-    "id": 26,
+    "id": 28,
     "name": "RED BULL TV",
     "shortName": "RBTV",
     "category": "Deportes",
@@ -348,7 +372,7 @@
     "isActive": true
   },
   {
-    "id": 27,
+    "id": 29,
     "name": "ESPN 2",
     "shortName": "ESPN2",
     "category": "Deportes",
@@ -362,7 +386,7 @@
     "isActive": true
   },
   {
-    "id": 28,
+    "id": 30,
     "name": "ESPN 3",
     "shortName": "ESPN3",
     "category": "Deportes",
@@ -374,7 +398,7 @@
     "isActive": true
   },
   {
-    "id": 29,
+    "id": 31,
     "name": "ESPN 4",
     "shortName": "ESPN4",
     "category": "Deportes",
@@ -386,7 +410,7 @@
     "isActive": true
   },
   {
-    "id": 30,
+    "id": 32,
     "name": "ESPN 5",
     "shortName": "ESPN5",
     "category": "Deportes",
@@ -398,7 +422,7 @@
     "isActive": true
   },
   {
-    "id": 31,
+    "id": 33,
     "name": "ESPN 6",
     "shortName": "ESPN6",
     "category": "Deportes",
@@ -410,7 +434,7 @@
     "isActive": true
   },
   {
-    "id": 32,
+    "id": 34,
     "name": "ESPN 7",
     "shortName": "ESPN7",
     "category": "Deportes",
@@ -422,7 +446,7 @@
     "isActive": true
   },
   {
-    "id": 33,
+    "id": 35,
     "name": "ESPN PREMIUM (PRUEBA)",
     "shortName": "ESPNP",
     "category": "Deportes",
@@ -436,36 +460,12 @@
     "isActive": true
   },
   {
-    "id": 34,
+    "id": 36,
     "name": "PLAY DEPORTES (PRUEBA)",
     "shortName": "PLAY",
     "category": "Deportes",
     "playerType": "hls",
     "streamUrl": "https://d3kzwqwnq1f7tq.cloudfront.net/out/v1/0fd608d0807c48edb4713da6b80e8c34/index_6.m3u8?z=b",
-    "webUrl": "",
-    "logoUrl": "",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 35,
-    "name": "LA TELE",
-    "shortName": "LATELE",
-    "category": "Nacional",
-    "playerType": "hls",
-    "streamUrl": "http://190.128.214.97:64333/play/a03i/index.m3u8",
-    "webUrl": "",
-    "logoUrl": "https://i.imgur.com/Qcf6Qev.png",
-    "httpHeaders": {},
-    "isActive": true
-  },
-  {
-    "id": 36,
-    "name": "AMÉRICA TV PARAGUAY",
-    "shortName": "AMÉRICA",
-    "category": "Nacional",
-    "playerType": "hls",
-    "streamUrl": "https://america-live.argosworkspace.com/america/main_stream.m3u8",
     "webUrl": "",
     "logoUrl": "",
     "httpHeaders": {},
