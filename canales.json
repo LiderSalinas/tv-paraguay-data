@@ -19,7 +19,7 @@
     "shortName": "TF",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://rds3tf.desdeparaguay.net/telefuturo/telefuturo_int_med/playlist.m3u8?k=d90a540200b15f24e50c4278df9a0fe5409ecc6319373c9dba165f7757fa4064&exp=1795558757",
+    "streamUrl": "http://158.172.217.18:8000/play/a0ns/index.m3u8",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/telefuturo.png",
     "httpHeaders": {
