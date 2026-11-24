@@ -19,7 +19,7 @@
     "shortName": "TF",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://rds3tf.desdeparaguay.net/telefuturo/telefuturo_int_med/playlist.m3u8?k=91074361b4244fa5feddaf2a15a729a5851662cd2d516dcb29f2edeae6dd339e&exp=1795533913",
+    "streamUrl": "https://rds3tf.desdeparaguay.net/telefuturo/telefuturo_int_med/playlist.m3u8?k=d90a540200b15f24e50c4278df9a0fe5409ecc6319373c9dba165f7757fa4064&exp=1795558757",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/telefuturo.png",
     "httpHeaders": {
@@ -153,7 +153,7 @@
     "shortName": "MON",
     "category": "Noticias",
     "playerType": "hls",
-    "streamUrl": "https://rds3tf.desdeparaguay.net/monumentaltv/monumentaltv_int_med/playlist.m3u8?k=63508b417010c0777e0e6ff947eb1c51e6b340d63bdd3330b3fbfe469940d4bb&exp=1795506733",
+    "streamUrl": "https://rds3tf.desdeparaguay.net/monumentaltv/monumentaltv_int_med/playlist.m3u8?k=d90a540200b15f24e50c4278df9a0fe5409ecc6319373c9dba165f7757fa4064&exp=1795558757",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/monumental-tv.png",
     "httpHeaders": {
