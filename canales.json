@@ -19,7 +19,7 @@
     "shortName": "TF",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://rds3tf.desdeparaguay.net/telefuturo/telefuturo_int_med/playlist.m3u8?k=7a051deb373ea70b0d63ea542fc134b0dcefe5b2b110a47b56f6e2b955ac2a0c&exp=1795677349",
+    "streamUrl": "https://copacotf.desdeparaguay.net/telefuturo/telefuturo_py_baja/chunklist_w1857184750.m3u8?k=a8087c8d38b7171354e1f24af773eb2034958823986b9da8d223daf05e4c4e23&exp=1795736099",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/telefuturo.png",
     "httpHeaders": {
