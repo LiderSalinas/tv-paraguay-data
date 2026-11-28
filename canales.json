@@ -19,7 +19,7 @@
     "shortName": "TF",
     "category": "Nacional",
     "playerType": "hls",
-    "streamUrl": "https://rds3tf.desdeparaguay.net/telefuturo/telefuturo_int_med/playlist.m3u8?k=5184c59642d74acb18ba262797c300f6694a8cc472303b1786e4246216b8997d&exp=1795764548",
+    "streamUrl": "https://rds3tf.desdeparaguay.net/telefuturo/telefuturo_int_med/playlist.m3u8?k=27768fa2d3218aa14d121779ebfe5f19ce626337df75d0f413073c4c636d29e3&exp=1795852400",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/telefuturo.png",
     "httpHeaders": {
@@ -47,7 +47,7 @@
     "shortName": "NPY",
     "category": "Noticias",
     "playerType": "hls",
-    "streamUrl": "https://rds3tf.desdeparaguay.net/npy/npy_int_med/playlist.m3u8?k=28f0a6f742402533dde04c2c24b77d60d870907da92625bf63ffa48b14a6d2f2&exp=1795764526",
+    "streamUrl": "https://rds3tf.desdeparaguay.net/npy/npy_int_med/playlist.m3u8?k=117a2e5432b0f9c4a763484b7e80129c42bd403eaaf5c8450b887bd4caabe90f&exp=1795852371",
     "webUrl": "",
     "logoUrl": "https://cdn.jsdelivr.net/gh/LiderSalinas/tv-paraguay-data@main/logos/npy.png",
     "httpHeaders": {
